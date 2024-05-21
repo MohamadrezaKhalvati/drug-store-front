@@ -10,6 +10,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 public
+.env
+
 node_modules
 .DS_Store
 dist
