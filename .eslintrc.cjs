@@ -1,10 +1,8 @@
-const { resolve } = require('path')
 module.exports = {
   root: true,
   parserOptions: {
     extraFileExtensions: ['.vue'],
     parser: '@typescript-eslint/parser',
-    project: resolve(__dirname, './tsconfig.json'),
     tsconfigRootDir: __dirname,
     ecmaVersion: 2018,
     sourceType: 'module',

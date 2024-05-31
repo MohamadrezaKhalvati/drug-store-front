@@ -1,24 +1,21 @@
 <template>
-  <KTMessengerDrawer />
-  <KTActivityDrawer />
-  <KTToolButtons />
-  <KTHelpDrawer />
+	<KTMessengerDrawer />
+	<KTActivityDrawer />
+	<KTHelpDrawer />
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import KTMessengerDrawer from "@/layouts/default-layout/components/extras/MessengerDrawer.vue";
-import KTActivityDrawer from "@/layouts/default-layout/components/drawers/ActivityDrawer.vue";
-import KTHelpDrawer from "@/layouts/default-layout/components/extras/HelpDrawer.vue";
-import KTToolButtons from "@/layouts/default-layout/components/extras/ToolButtons.vue";
+import { defineComponent } from 'vue'
+import KTMessengerDrawer from '@/layouts/default-layout/components/extras/MessengerDrawer.vue'
+import KTActivityDrawer from '@/layouts/default-layout/components/drawers/ActivityDrawer.vue'
+import KTHelpDrawer from '@/layouts/default-layout/components/extras/HelpDrawer.vue'
 
 export default defineComponent({
-  name: "global-drawers",
-  components: {
-    KTMessengerDrawer,
-    KTActivityDrawer,
-    KTHelpDrawer,
-    KTToolButtons,
-  },
-});
+	name: 'GlobalDrawers',
+	components: {
+		KTMessengerDrawer,
+		KTActivityDrawer,
+		KTHelpDrawer,
+	},
+})
 </script>
