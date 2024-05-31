@@ -1,8 +1,8 @@
 /*eslint no-prototype-builtins: "off"*/
 function getObjectPropertyValueByKey(obj: any, key: string): any | undefined {
-  const map = new Map(Object.entries(obj));
+  const map = new Map(Object.entries(obj))
   if (obj.hasOwnProperty(key) && map) {
-    return map.get(key);
+    return map.get(key)
   }
 }
 
@@ -12,43 +12,43 @@ function getObjectPropertyValueByKey(obj: any, key: string): any | undefined {
  * @returns {boolean}
  */
 function getUniqueIdWithPrefix(prefix: string | undefined): string {
-  const result = Math.floor(Math.random() * new Date().getTime()).toString();
+  const result = Math.floor(Math.random() * new Date().getTime()).toString()
   if (!prefix) {
-    return result;
+    return result
   }
 
-  return `${prefix}${result}`;
+  return `${prefix}${result}`
 }
 
 /* eslint-disable no-useless-escape */
 function stringSnakeToCamel(str: string): string {
   return str.replace(/(\-\w)/g, function (m) {
-    return m[1].toUpperCase();
-  });
+    return m[1].toUpperCase()
+  })
 }
 
 function toJSON(value: string | JSON): JSON | undefined {
-  if (typeof value !== "string") {
-    return value;
+  if (typeof value !== 'string') {
+    return value
   }
 
   if (!value) {
-    return undefined;
+    return undefined
   }
 
   // ("'" => "\"");
   const result = value
     .toString()
-    .split("")
+    .split('')
     .map((el) => (el !== "'" ? el : '"'))
-    .join("");
+    .join('')
   const jsonStr = result.replace(/(\w+:)|(\w+ :)/g, function (matched) {
-    return '"' + matched.substring(0, matched.length - 1) + '":';
-  });
+    return '"' + matched.substring(0, matched.length - 1) + '":'
+  })
   try {
-    return JSON.parse(jsonStr);
+    return JSON.parse(jsonStr)
   } catch {
-    return undefined;
+    return undefined
   }
 }
 
@@ -57,4 +57,4 @@ export {
   getUniqueIdWithPrefix,
   stringSnakeToCamel,
   toJSON,
-};
+}

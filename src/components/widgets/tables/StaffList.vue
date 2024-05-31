@@ -1,7 +1,5 @@
 <template>
-	<!--begin::Tables Widget 9-->
 	<div class="card" :class="widgetClasses">
-		<!--begin::Header-->
 		<div class="card-header border-0 pt-5">
 			<h3 class="card-title align-items-start flex-column">
 				<span class="card-label fw-bold fs-3 mb-1">Members Statistics</span>
@@ -18,15 +16,10 @@
 				</a>
 			</div>
 		</div>
-		<!--end::Header-->
 
-		<!--begin::Body-->
 		<div class="card-body py-3">
-			<!--begin::Table container-->
 			<div class="table-responsive">
-				<!--begin::Table-->
 				<table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-					<!--begin::Table head-->
 					<thead>
 						<tr class="fw-bold text-muted">
 							<th class="w-25px">
@@ -39,22 +32,26 @@
 								</div>
 							</th>
 							<th class="min-w-150px">
-								Authors
+								User
 							</th>
 							<th class="min-w-140px">
-								Company
+								Email
 							</th>
 							<th class="min-w-120px">
-								Progress
+								Role
 							</th>
-							<th class="min-w-100px text-end">
-								Actions
+							<th class="min-w-100px ">
+								Last login
+							</th>
+							<th class="min-w-120px">
+								Date Joined
+							</th>
+							<th class="min-w-100px text-center">
+								Action
 							</th>
 						</tr>
 					</thead>
-					<!--end::Table head-->
 
-					<!--begin::Table body-->
 					<tbody>
 						<template v-for="(item, index) in list" :key="index">
 							<tr>
@@ -74,7 +71,7 @@
 											<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
 												item.name }}</a>
 
-											<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.skills
+											<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.id
 												}}</span>
 										</div>
 									</div>
@@ -82,28 +79,45 @@
 
 								<td>
 									<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-										item.companyName }}</a>
-									<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.companySkills
-										}}</span>
+										item.email }}</a>
 								</td>
 
 								<td class="text-end">
 									<div class="d-flex flex-column w-100 me-2">
 										<div class="d-flex flex-stack mb-2">
-											<span class="text-muted me-2 fs-7 fw-semibold">
-												{{ item.value }}%
+											<span class=" me-2 fs-7 fw-semibold">
+												{{ item.role }}
 											</span>
 										</div>
 
-										<div class="progress h-6px w-100">
+										<!-- <div class="progress h-6px w-100">
 											<div class="progress-bar" :class="`bg-${item.color}`" role="progressbar"
 												:style="{ width: item.value + '%' }" :aria-valuenow="item.value"
 												aria-valuemin="0" aria-valuemax="100" />
-										</div>
+										</div> -->
 									</div>
 								</td>
 
-								<td class="text-end">
+								<td>
+									<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
+										item.lastLogin }}</a>
+								</td>
+
+
+								<td>
+									<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
+										item.dateJoined }}</a>
+								</td>
+
+
+								<td>
+									<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+										data-bs-target="#kt_modal_invite_friends">
+										Action
+										<KTIcon icon-name="down" icon-class="fs-3" />
+									</a>
+								</td>
+								<!-- <td class="text-end">
 									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
 										<KTIcon icon-name="switch" icon-class="fs-3" />
 									</a>
@@ -115,19 +129,14 @@
 									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
 										<KTIcon icon-name="trash" icon-class="fs-3" />
 									</a>
-								</td>
+								</td> -->
 							</tr>
 						</template>
 					</tbody>
-					<!--end::Table body-->
 				</table>
-				<!--end::Table-->
 			</div>
-			<!--end::Table container-->
 		</div>
-		<!--begin::Body-->
 	</div>
-	<!--end::Tables Widget 9-->
 </template>
 
 <script lang="ts">
@@ -138,57 +147,68 @@ export default defineComponent({
 	name: 'StaffList',
 	components: {},
 	props: {
-		widgetClasses: String,
+		widgetClasses: {
+			type: String, required: false, default: ''
+		},
 	},
 	setup() {
 		const checkedRows = ref<Array<number>>([])
 
 		const list = [
 			{
+				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Ana Simmons',
-				skills: 'HTML, JS, ReactJS',
-				companyName: 'Intertico',
-				companySkills: 'Web, UI/UX Design',
-				value: '50',
-				color: 'primary',
+				name: 'Mehrshad Khalili',
+				email: 'example@example.com',
+				role: 'Administrator',
+				lastLogin: 'Yesterday',
+				dateJoined: '2022/02/01'
 			},
 			{
-				image: getAssetPath('media/avatars/300-2.jpg'),
-				name: 'Jessie Clarcson',
-				skills: 'C#, ASP.NET, MS SQL',
-				companyName: 'Agoda',
-				companySkills: 'Houses & Hotels',
-				value: '70',
-				color: 'danger',
+				id: '#S674837',
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Mehrshad Khalili',
+				email: 'example@example.com',
+				role: 'Administrator',
+				lastLogin: 'Yesterday',
+				dateJoined: '2022/02/01'
 			},
 			{
-				image: getAssetPath('media/avatars/300-5.jpg'),
-				name: 'Lebron Wayde',
-				skills: 'PHP, Laravel, VueJS',
-				companyName: 'RoadGee',
-				companySkills: 'Transportation',
-				value: '60',
-				color: 'success',
+				id: '#S674837',
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Mehrshad Khalili',
+				email: 'example@example.com',
+				role: 'Administrator',
+				lastLogin: 'Yesterday',
+				dateJoined: '2022/02/01'
 			},
 			{
-				image: getAssetPath('media/avatars/300-20.jpg'),
-				name: 'Natali Goodwin',
-				skills: 'Python, PostgreSQL, ReactJS',
-				companyName: 'The Hill',
-				companySkills: 'Insurance',
-				value: '50',
-				color: 'warning',
+				id: '#S674837',
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Mehrshad Khalili',
+				email: 'example@example.com',
+				role: 'Administrator',
+				lastLogin: 'Yesterday',
+				dateJoined: '2022/02/01'
 			},
 			{
-				image: getAssetPath('media/avatars/300-23.jpg'),
-				name: 'Kevin Leonard',
-				skills: 'HTML, JS, ReactJS',
-				companyName: 'RoadGee',
-				companySkills: 'Art Director',
-				value: '90',
-				color: 'info',
+				id: '#S674837',
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Mehrshad Khalili',
+				email: 'example@example.com',
+				role: 'Administrator',
+				lastLogin: 'Yesterday',
+				dateJoined: '2022/02/01'
 			},
+			// {
+			// 	image: getAssetPath('media/avatars/300-23.jpg'),
+			// 	name: 'Mehrshad Khalili',
+			// 	skills: 'HTML, JS, ReactJS',
+			// 	companyName: 'RoadGee',
+			// 	companySkills: 'Art Director',
+			// 	value: '90',
+			// 	color: 'info',
+			// },
 		]
 
 		return {

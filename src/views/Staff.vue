@@ -1,4 +1,5 @@
 <template>
+
 	<div>
 		<StaffList widgetClasses="mb-5 mb-xl-8" />
 	</div>
@@ -11,7 +12,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
 	name: 'Staff',
 	components: {
-		StaffList
+		StaffList,
 	},
 	setup() {
 

@@ -10,12 +10,12 @@ export class CookieComponent {
   public static get(name: string): string | undefined {
     const matches = document.cookie.match(
       new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    return matches ? decodeURIComponent(matches[1]) : undefined;
+        '(?:^|; )' +
+          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
+          '=([^;]*)',
+      ),
+    )
+    return matches ? decodeURIComponent(matches[1]) : undefined
   }
 
   /**
@@ -30,30 +30,30 @@ export class CookieComponent {
   public static set(
     name: string,
     value: string | number | boolean,
-    cookieOptions: any
+    cookieOptions: any,
   ): void {
     const options = {
-      path: "/",
+      path: '/',
       // add other defaults here if necessary
       ...cookieOptions,
-    };
+    }
 
     if (options.expires instanceof Date) {
-      options.expires = options.expires.toUTCString();
+      options.expires = options.expires.toUTCString()
     }
 
     let updatedCookie =
-      encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      encodeURIComponent(name) + '=' + encodeURIComponent(value)
 
     for (const optionKey in options) {
-      updatedCookie += "; " + optionKey;
-      const optionValue = options[optionKey];
+      updatedCookie += '; ' + optionKey
+      const optionValue = options[optionKey]
       if (optionValue !== true) {
-        updatedCookie += "=" + optionValue;
+        updatedCookie += '=' + optionValue
       }
     }
 
-    document.cookie = updatedCookie;
+    document.cookie = updatedCookie
   }
 
   /**
@@ -62,8 +62,8 @@ export class CookieComponent {
    * @param  {string} name
    */
   public static delete(name: string): void {
-    CookieComponent.set(name, "", {
-      "max-age": -1,
-    });
+    CookieComponent.set(name, '', {
+      'max-age': -1,
+    })
   }
 }

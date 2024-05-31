@@ -76,7 +76,7 @@ export default defineComponent({
 	name: 'ProductOrders',
 	components: {},
 	props: {
-		className: { type: String, required: false },
+		className: { type: String, required: false, default: '' },
 	},
 	setup() {
 		const table = [
