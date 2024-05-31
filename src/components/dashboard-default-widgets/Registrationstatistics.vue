@@ -38,7 +38,7 @@ import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: "default-dashboard-widget-3",
+	name: "Registrationstatistics",
 	components: {},
 	props: {
 		stats: { type: String, required: true },

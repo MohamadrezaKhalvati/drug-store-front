@@ -1,5 +1,5 @@
 <template>
-	<div class="card" :class="widgetClasses">
+	<div class="card min-h-100" :class="widgetClasses">
 		<div class="card-header pt-7 border-0">
 			<h3 class="card-title align-items-start flex-column">
 				<span class="card-label fw-bold text-gray-800">Top Users</span>

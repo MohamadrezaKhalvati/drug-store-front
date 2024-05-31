@@ -152,7 +152,7 @@ import StatisticsWidget2 from "@/components/widgets/statsistics/Widget2.vue";
 import StatisticsWidget3 from "@/components/widgets/statsistics/Widget3.vue";
 import StatisticsWidget4 from "@/components/widgets/statsistics/Widget4.vue";
 import StatisticsWidget5 from "@/components/widgets/statsistics/Widget5.vue";
-import OrderThisMonth from "@/components/widgets/statsistics/Widget6.vue";
+import OrderThisMonth from "@/components/widgets/statsistics/OrderThisMonth.vue";
 
 export default defineComponent({
 	name: "widgets-statistics",

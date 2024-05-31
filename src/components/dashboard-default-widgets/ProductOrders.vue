@@ -1,5 +1,5 @@
 <template>
-	<div class="card card-flush" :class="className">
+	<div class="card card-flush min-h-100" :class="className">
 		<div class="card-header pt-7">
 			<h3 class="card-title align-items-start flex-column">
 				<span class="card-label fw-bold text-gray-800">Product Order</span>
@@ -63,7 +63,7 @@ import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: "default-dashboard-widget-10",
+	name: "ProductOrders",
 	components: {},
 	props: {
 		className: { type: String, required: false },

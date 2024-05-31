@@ -7,7 +7,7 @@
 					<span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">69,700</span>
 					<span class="badge badge-light-success fs-base">
 						<KTIcon icon-name="arrow-up" icon-class="fs-5 text-success ms-n1" />
-						4.5%
+						4.2%
 					</span>
 				</div>
 
@@ -70,7 +70,7 @@ import { defineComponent, onMounted } from 'vue'
 import { getCSSVariableValue } from '@/assets/ts/_utils'
 
 export default defineComponent({
-	name: 'DefaultDashboardWidget2',
+	name: 'IncomeStasictics',
 	components: {},
 	props: {
 		className: { type: String, required: false },

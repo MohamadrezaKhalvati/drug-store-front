@@ -11,14 +11,11 @@
 							<KTContent />
 						</div>
 					</div>
-					<KTFooter />
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<KTDrawers />
-	<KTScrollTop />
 	<KTModals />
 	<KTCustomize />
 </template>
@@ -35,10 +32,8 @@ import KTHeader from '@/layouts/default-layout/components/header/Header.vue'
 import KTSidebar from '@/layouts/default-layout/components/sidebar/Sidebar.vue'
 import KTContent from '@/layouts/default-layout/components/content/Content.vue'
 import KTToolbar from '@/layouts/default-layout/components/toolbar/Toolbar.vue'
-import KTFooter from '@/layouts/default-layout/components/footer/Footer.vue'
 import KTDrawers from '@/layouts/default-layout/components/drawers/Drawers.vue'
 import KTModals from '@/layouts/default-layout/components/modals/Modals.vue'
-import KTScrollTop from '@/layouts/default-layout/components/extras/ScrollTop.vue'
 import KTCustomize from '@/layouts/default-layout/components/extras/Customize.vue'
 import { useRoute } from 'vue-router'
 import { reinitializeComponents } from '@/core/plugins/keenthemes'
@@ -51,9 +46,7 @@ export default defineComponent({
 		KTSidebar,
 		KTContent,
 		KTToolbar,
-		KTFooter,
 		KTDrawers,
-		KTScrollTop,
 		KTModals,
 		KTCustomize,
 	},
