@@ -11,11 +11,21 @@
 				<table class="table table-row-dashed align-middle gs-0 gy-3 my-auto ">
 					<thead>
 						<tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
-							<th class="p-0 pb-3 min-w-50px text-start">Order id</th>
-							<th class="p-0 pb-3 min-w-100px text-center">Customer</th>
-							<th class="p-0 pb-3 min-w-100px text-end">Total Price</th>
-							<th class="p-0 pb-3 min-w-175px text-center ">Date added</th>
-							<th class="p-0 pb-3 w-50px text-center">Status</th>
+							<th class="p-0 pb-3 min-w-50px text-start">
+								Order id
+							</th>
+							<th class="p-0 pb-3 min-w-100px text-center">
+								Customer
+							</th>
+							<th class="p-0 pb-3 min-w-100px text-end">
+								Total Price
+							</th>
+							<th class="p-0 pb-3 min-w-175px text-center ">
+								Date added
+							</th>
+							<th class="p-0 pb-3 w-50px text-center">
+								Status
+							</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -59,11 +69,11 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent } from "vue";
+import { getAssetPath } from '@/core/helpers/assets';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: "ProductOrders",
+	name: 'ProductOrders',
 	components: {},
 	props: {
 		className: { type: String, required: false },
@@ -71,71 +81,71 @@ export default defineComponent({
 	setup() {
 		const table = [
 			{
-				id: "#YHU-868",
-				name: "Mehrshad Khalili",
-				statistics: "9.2",
+				id: '#YHU-868',
+				name: 'Mehrshad Khalili',
+				statistics: '9.2',
 				icon: true,
-				date: "03/05/2024",
-				chartColor: "success",
+				date: '03/05/2024',
+				chartColor: 'success',
 				status: {
-					label: "Shipped",
-					state: "success",
+					label: 'Shipped',
+					state: 'success',
 				},
 			},
 			{
-				id: "#YHU-868",
-				name: "Mehrshad Khalili",
-				statistics: "0.4",
+				id: '#YHU-868',
+				name: 'Mehrshad Khalili',
+				statistics: '0.4',
 				icon: false,
-				date: "03/05/2024",
-				chartColor: "success",
+				date: '03/05/2024',
+				chartColor: 'success',
 				status: {
-					label: "success",
-					state: "danger",
+					label: 'success',
+					state: 'danger',
 				},
 			},
 			{
-				id: "#YHU-868",
-				name: "Mehrshad Khalili",
-				statistics: "9.2",
+				id: '#YHU-868',
+				name: 'Mehrshad Khalili',
+				statistics: '9.2',
 				icon: true,
-				date: "03/05/2024",
-				chartColor: "success",
+				date: '03/05/2024',
+				chartColor: 'success',
 				status: {
-					label: "Shipped",
-					state: "success",
+					label: 'Shipped',
+					state: 'success',
 				},
 			},
 			{
-				id: "#YHU-868",
-				name: "Mehrshad Khalili",
-				statistics: "9.2",
+				id: '#YHU-868',
+				name: 'Mehrshad Khalili',
+				statistics: '9.2',
 				icon: true,
-				date: "03/05/2024",
-				chartColor: "primary",
+				date: '03/05/2024',
+				chartColor: 'primary',
 				status: {
-					label: "Confirmed",
-					state: "primary",
+					label: 'Confirmed',
+					state: 'primary',
 				},
 			},
 			{
-				id: "#YHU-868",
-				name: "Mehrshad Khalili",
-				statistics: "0.4",
+				id: '#YHU-868',
+				name: 'Mehrshad Khalili',
+				statistics: '0.4',
 				icon: false,
-				date: "03/05/2024",
-				chartColor: "warning",
+				date: '03/05/2024',
+				chartColor: 'warning',
 				status: {
-					label: "Pending",
-					state: "warning",
+					label: 'Pending',
+					state: 'warning',
 				},
 			},
-		];
+		]
 
 		return {
 			table,
 			getAssetPath,
-		};
+		}
 	},
-});
+})
 </script>

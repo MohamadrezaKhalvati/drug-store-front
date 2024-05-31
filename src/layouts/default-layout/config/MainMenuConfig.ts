@@ -11,7 +11,7 @@ const MainMenuConfig: Array<MenuItem> = [
       },
       {
         heading: 'Staff',
-        route: '/dashboard',
+        route: '/Staff',
         keenthemesIcon: 'element-11',
         bootstrapIcon: 'bi-app-indicator',
       },
