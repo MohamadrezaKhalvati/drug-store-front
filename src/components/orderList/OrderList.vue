@@ -6,7 +6,7 @@
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
 						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Customers" @input="searchItems()">
+							placeholder="Search Order" @input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">

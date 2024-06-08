@@ -1,24 +1,24 @@
-import type LayoutConfigTypes from "@/layouts/default-layout/config/types";
+import type LayoutConfigTypes from '@/layouts/default-layout/config/types'
 
 const config: LayoutConfigTypes = {
   general: {
-    mode: "system",
-    primaryColor: "#50CD89",
-    pageWidth: "default",
-    layout: "dark-sidebar",
-    iconsType: "duotone",
+    mode: 'system',
+    primaryColor: '#50CD89',
+    pageWidth: 'default',
+    layout: 'dark-sidebar',
+    iconsType: 'duotone',
   },
   header: {
     display: true,
     default: {
-      container: "fluid",
+      container: 'fluid',
       fixed: {
         desktop: true,
         mobile: true,
       },
       menu: {
         display: true,
-        iconType: "keenthemes",
+        iconType: 'keenthemes',
       },
     },
   },
@@ -33,13 +33,13 @@ const config: LayoutConfigTypes = {
         },
       },
       menu: {
-        iconType: "keenthemes",
+        iconType: 'keenthemes',
       },
     },
   },
   toolbar: {
     display: true,
-    container: "fluid",
+    container: 'fluid',
     fixed: {
       desktop: false,
       mobile: false,
@@ -48,25 +48,25 @@ const config: LayoutConfigTypes = {
   pageTitle: {
     display: true,
     breadcrumb: true,
-    direction: "column",
+    direction: 'column',
   },
   content: {
-    container: "fluid",
+    container: 'fluid',
   },
   footer: {
     display: true,
-    container: "fluid",
+    container: 'fluid',
     fixed: {
       desktop: false,
       mobile: false,
     },
   },
   illustrations: {
-    set: "sketchy-1",
+    set: 'sketchy-1',
   },
   scrolltop: {
     display: true,
   },
-};
+}
 
-export default config;
+export default config
