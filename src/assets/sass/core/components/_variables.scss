@@ -607,6 +607,10 @@ $input-solid-bg-focus:                      var(--#{$prefix}gray-200) !default;
 $input-solid-placeholder-color:             var(--#{$prefix}gray-500) !default; 
 
 
+
+.table-card{
+	color : $input-solid-bg
+}
 // Form checks
 $form-check-input-width:                    1.75rem !default;
 $form-check-input-width-sm:                 1.55rem !default;

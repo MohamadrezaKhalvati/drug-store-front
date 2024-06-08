@@ -6,7 +6,7 @@
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
 						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Staff" @input="searchItems()">
+							placeholder="Search Customers" @input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
@@ -16,7 +16,7 @@
 					</a>
 					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
-						Add Staff
+						Add Product
 					</a>
 				</div>
 
@@ -36,20 +36,23 @@
 											">
 									</div>
 								</th>
-								<th class="min-w-150px">
-									User
+								<th class="min-w-100px">
+									Product
 								</th>
-								<th class="min-w-140px">
-									Email
+								<th class="min-w-100px">
+									SKU
 								</th>
-								<th class="min-w-120px">
-									Role
+								<th class="min-w-100px">
+									QTY
 								</th>
-								<th class="min-w-100px ">
-									Last login
+								<th class="min-w-100px">
+									Price
 								</th>
-								<th class="min-w-120px">
-									Date Joined
+								<th class="min-w-100px">
+									Rating
+								</th>
+								<th class="min-w-100px">
+									Status
 								</th>
 								<th class="min-w-100px text-center">
 									Action
@@ -66,7 +69,6 @@
 												type="checkbox" :value="index">
 										</div>
 									</td>
-
 									<td>
 										<div class="d-flex align-items-center">
 											<div class="symbol symbol-45px me-5">
@@ -76,62 +78,45 @@
 												<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
 													item.name }}</a>
 
-												<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.id
-													}}</span>
 											</div>
 										</div>
 									</td>
-
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.email }}</a>
+										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+											{{ item.SKU }}
+										</a>
 									</td>
-
 									<td class="text-end">
 										<div class="d-flex flex-column w-100 me-2">
 											<div class="d-flex flex-stack mb-2">
-												<span class=" me-2 fs-7 fw-semibold">
-													{{ item.role }}
+												<span class=" me-2 fs-7  fw-bold">
+													{{ item.QTY }}
 												</span>
 											</div>
-
-
 										</div>
 									</td>
-
 									<td>
-										<a href="#"
-											class="text-gray-900 fw-bold text-hover-primary d-block fs-6 bg-light w-fit">{{
-												item.lastLogin }}</a>
-									</td>
-
-
-									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.dateJoined }}</a>
-									</td>
-
-
-									<td>
-										<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-											data-bs-target="#kt_modal_invite_friends">
-											Action
-											<KTIcon icon-name="down" icon-class="fs-3" />
+										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6 w-fit">
+											{{ item.Price }}
 										</a>
 									</td>
-									<!-- <td class="text-end">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="switch" icon-class="fs-3" />
-									</a>
-
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="pencil" icon-class="fs-3" />
-									</a>
-
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-										<KTIcon icon-name="trash" icon-class="fs-3" />
-									</a>
-								</td> -->
+									<td>
+										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+											{{ item.Rating }}</a>
+									</td>
+									<td>
+										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+											{{ item.Status }}</a>
+									</td>
+									<td>
+										<div class="d-flex justify-content-center">
+											<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+												data-bs-target="#kt_modal_invite_friends ">
+												Action
+												<KTIcon icon-name="down" icon-class="fs-3" />
+											</a>
+										</div>
+									</td>
 								</tr>
 							</template>
 						</tbody>
@@ -143,13 +128,11 @@
 </template>
 
 <script lang="ts">
-// import { MenuComponent } from '@/assets/ts/components';
-// import type { ICustomer } from '@/core/data/customers';
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
+
 export default defineComponent({
-	name: 'StaffList',
-	components: {},
+	name: 'ProductList',
 	props: {
 		widgetClasses: {
 			type: String, required: false, default: ''
@@ -157,56 +140,73 @@ export default defineComponent({
 	},
 	setup() {
 		const checkedRows = ref<Array<number>>([])
-
-
 		const list = ref([
 			{
-				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Mehrshad Khalili',
-				email: 'example@example.com',
-				role: 'Administrator',
-				lastLogin: 'Yesterday',
-				dateJoined: '2022/02/01'
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
 			},
 			{
-				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Mehrshad Khalili',
-				email: 'example@example.com',
-				role: 'Administrator',
-				lastLogin: 'Yesterday',
-				dateJoined: '2022/02/01'
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
 			},
 			{
-				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Mehrshad Khalili',
-				email: 'example@example.com',
-				role: 'Administrator',
-				lastLogin: 'Yesterday',
-				dateJoined: '2022/02/01'
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
 			},
 			{
-				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Mehrshad Khalili',
-				email: 'example@example.com',
-				role: 'Administrator',
-				lastLogin: 'Yesterday',
-				dateJoined: '2022/02/01'
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
 			},
 			{
-				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
-				name: 'Mehrshad Khalili',
-				email: 'example@example.com',
-				role: 'Administrator',
-				lastLogin: 'Yesterday',
-				dateJoined: '2022/02/01'
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
 			},
+			{
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
+			},
+			{
+				image: getAssetPath('media/avatars/300-14.jpg'),
+				name: 'Argan Oil',
+				SKU: 'XYZ-12345',
+				QTY: '12',
+				Price: '99.99',
+				Rating: 5,
+				Status: 'Published',
+			},
+
 		])
-		const search = ref<string>('')
+		const search = ref('')
 		function searchItems() {
 			// list.value.splice(0, list.value.length, ...initCustomers.value)
 			// if (search.value !== '') {
@@ -245,6 +245,7 @@ export default defineComponent({
 			searchItems,
 			search
 		}
-	},
+	}
 })
+
 </script>

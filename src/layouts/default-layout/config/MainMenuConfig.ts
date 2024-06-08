@@ -15,6 +15,30 @@ const MainMenuConfig: Array<MenuItem> = [
         keenthemesIcon: 'element-11',
         bootstrapIcon: 'bi-app-indicator',
       },
+      {
+        heading: 'Customer',
+        route: '/Customer',
+        keenthemesIcon: 'element-11',
+        bootstrapIcon: 'bi-app-indicator',
+      },
+      {
+        heading: 'Order',
+        route: '/Order',
+        keenthemesIcon: 'element-11',
+        bootstrapIcon: 'bi-app-indicator',
+      },
+      {
+        heading: 'Product',
+        route: '/Product',
+        keenthemesIcon: 'element-11',
+        bootstrapIcon: 'bi-app-indicator',
+      },
+      {
+        heading: 'Report',
+        route: '/Report',
+        keenthemesIcon: 'element-11',
+        bootstrapIcon: 'bi-app-indicator',
+      },
     ],
   },
   {

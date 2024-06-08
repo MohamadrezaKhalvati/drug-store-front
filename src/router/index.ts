@@ -28,6 +28,42 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: '/Customer',
+        name: 'Customer',
+        component: () => import('@/views/Customer.vue'),
+        meta: {
+          pageTitle: 'Customer',
+          breadcrumbs: ['Customer'],
+        },
+      },
+      {
+        path: '/Product',
+        name: 'Product',
+        component: () => import('@/views/Product.vue'),
+        meta: {
+          pageTitle: 'Product',
+          breadcrumbs: ['Product'],
+        },
+      },
+      {
+        path: '/Order',
+        name: 'Order',
+        component: () => import('@/views/Order.vue'),
+        meta: {
+          pageTitle: 'Order',
+          breadcrumbs: ['Order'],
+        },
+      },
+      {
+        path: '/Report',
+        name: 'Report',
+        component: () => import('@/views/Report.vue'),
+        meta: {
+          pageTitle: 'Report',
+          breadcrumbs: ['Report'],
+        },
+      },
+      {
         path: '/crafted/pages/profile',
         name: 'profile',
         component: () => import('@/components/page-layouts/Profile.vue'),

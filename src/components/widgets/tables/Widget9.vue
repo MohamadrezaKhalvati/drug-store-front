@@ -52,13 +52,21 @@
                         ? (checkedRows.length = 0)
                         : (checkedRows = [0, 1, 2, 3, 4, 5])
                     "
-                  />
+                  >
                 </div>
               </th>
-              <th class="min-w-150px">Authors</th>
-              <th class="min-w-140px">Company</th>
-              <th class="min-w-120px">Progress</th>
-              <th class="min-w-100px text-end">Actions</th>
+              <th class="min-w-150px">
+Authors
+</th>
+              <th class="min-w-140px">
+Company
+</th>
+              <th class="min-w-120px">
+Progress
+</th>
+              <th class="min-w-100px text-end">
+Actions
+</th>
             </tr>
           </thead>
           <!--end::Table head-->
@@ -72,18 +80,18 @@
                     class="form-check form-check-sm form-check-custom form-check-solid"
                   >
                     <input
+                      v-model="checkedRows"
                       class="form-check-input widget-9-check"
                       type="checkbox"
                       :value="index"
-                      v-model="checkedRows"
-                    />
+                    >
                   </div>
                 </td>
 
                 <td>
                   <div class="d-flex align-items-center">
                     <div class="symbol symbol-45px me-5">
-                      <img :src="item.image" alt="" />
+                      <img :src="item.image" alt="">
                     </div>
                     <div class="d-flex justify-content-start flex-column">
                       <a
@@ -129,7 +137,7 @@
                         :aria-valuenow="item.value"
                         aria-valuemin="0"
                         aria-valuemax="100"
-                      ></div>
+                      />
                     </div>
                   </div>
                 </td>
@@ -171,71 +179,71 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent, ref } from "vue";
+import { getAssetPath } from '@/core/helpers/assets';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: "kt-widget-9",
+  name: 'KtWidget9',
   components: {},
   props: {
     widgetClasses: String,
   },
   setup() {
-    const checkedRows = ref<Array<number>>([]);
+    const checkedRows = ref<Array<number>>([])
 
     const list = [
       {
-        image: getAssetPath("media/avatars/300-14.jpg"),
-        name: "Ana Simmons",
-        skills: "HTML, JS, ReactJS",
-        companyName: "Intertico",
-        companySkills: "Web, UI/UX Design",
-        value: "50",
-        color: "primary",
+        image: getAssetPath('media/avatars/300-14.jpg'),
+        name: 'Ana Simmons',
+        skills: 'HTML, JS, ReactJS',
+        companyName: 'Intertico',
+        companySkills: 'Web, UI/UX Design',
+        value: '50',
+        color: 'primary',
       },
       {
-        image: getAssetPath("media/avatars/300-2.jpg"),
-        name: "Jessie Clarcson",
-        skills: "C#, ASP.NET, MS SQL",
-        companyName: "Agoda",
-        companySkills: "Houses & Hotels",
-        value: "70",
-        color: "danger",
+        image: getAssetPath('media/avatars/300-2.jpg'),
+        name: 'Jessie Clarcson',
+        skills: 'C#, ASP.NET, MS SQL',
+        companyName: 'Agoda',
+        companySkills: 'Houses & Hotels',
+        value: '70',
+        color: 'danger',
       },
       {
-        image: getAssetPath("media/avatars/300-5.jpg"),
-        name: "Lebron Wayde",
-        skills: "PHP, Laravel, VueJS",
-        companyName: "RoadGee",
-        companySkills: "Transportation",
-        value: "60",
-        color: "success",
+        image: getAssetPath('media/avatars/300-5.jpg'),
+        name: 'Lebron Wayde',
+        skills: 'PHP, Laravel, VueJS',
+        companyName: 'RoadGee',
+        companySkills: 'Transportation',
+        value: '60',
+        color: 'success',
       },
       {
-        image: getAssetPath("media/avatars/300-20.jpg"),
-        name: "Natali Goodwin",
-        skills: "Python, PostgreSQL, ReactJS",
-        companyName: "The Hill",
-        companySkills: "Insurance",
-        value: "50",
-        color: "warning",
+        image: getAssetPath('media/avatars/300-20.jpg'),
+        name: 'Natali Goodwin',
+        skills: 'Python, PostgreSQL, ReactJS',
+        companyName: 'The Hill',
+        companySkills: 'Insurance',
+        value: '50',
+        color: 'warning',
       },
       {
-        image: getAssetPath("media/avatars/300-23.jpg"),
-        name: "Kevin Leonard",
-        skills: "HTML, JS, ReactJS",
-        companyName: "RoadGee",
-        companySkills: "Art Director",
-        value: "90",
-        color: "info",
+        image: getAssetPath('media/avatars/300-23.jpg'),
+        name: 'Kevin Leonard',
+        skills: 'HTML, JS, ReactJS',
+        companyName: 'RoadGee',
+        companySkills: 'Art Director',
+        value: '90',
+        color: 'info',
       },
-    ];
+    ]
 
     return {
       list,
       checkedRows,
       getAssetPath,
-    };
+    }
   },
-});
+})
 </script>

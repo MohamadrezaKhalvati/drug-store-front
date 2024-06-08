@@ -6,7 +6,7 @@
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
 						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Staff" @input="searchItems()">
+							placeholder="Search Customers" @input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
@@ -16,7 +16,7 @@
 					</a>
 					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
-						Add Staff
+						Add Customer
 					</a>
 				</div>
 
@@ -39,19 +39,19 @@
 								<th class="min-w-150px">
 									User
 								</th>
-								<th class="min-w-140px">
+								<th class="min-w-120px">
 									Email
 								</th>
 								<th class="min-w-120px">
-									Role
+									Phone Number
 								</th>
 								<th class="min-w-100px ">
 									Last login
 								</th>
-								<th class="min-w-120px">
-									Date Joined
+								<th class="min-w-140px">
+									Create Date
 								</th>
-								<th class="min-w-100px text-center">
+								<th class="min-w-120px text-start">
 									Action
 								</th>
 							</tr>
@@ -66,7 +66,6 @@
 												type="checkbox" :value="index">
 										</div>
 									</td>
-
 									<td>
 										<div class="d-flex align-items-center">
 											<div class="symbol symbol-45px me-5">
@@ -75,63 +74,41 @@
 											<div class="d-flex justify-content-start flex-column">
 												<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
 													item.name }}</a>
-
 												<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.id
 													}}</span>
 											</div>
 										</div>
 									</td>
-
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.email }}</a>
+										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+											{{ item.email }}
+										</a>
 									</td>
-
 									<td class="text-end">
 										<div class="d-flex flex-column w-100 me-2">
 											<div class="d-flex flex-stack mb-2">
-												<span class=" me-2 fs-7 fw-semibold">
-													{{ item.role }}
+												<span class=" me-2 fs-7  fw-bold">
+													{{ item.phoneNumber }}
 												</span>
 											</div>
-
-
 										</div>
 									</td>
-
 									<td>
 										<a href="#"
 											class="text-gray-900 fw-bold text-hover-primary d-block fs-6 bg-light w-fit">{{
 												item.lastLogin }}</a>
 									</td>
-
-
 									<td>
 										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
 											item.dateJoined }}</a>
 									</td>
-
-
 									<td>
 										<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-											data-bs-target="#kt_modal_invite_friends">
+											data-bs-target="#kt_modal_invite_friends ">
 											Action
 											<KTIcon icon-name="down" icon-class="fs-3" />
 										</a>
 									</td>
-									<!-- <td class="text-end">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="switch" icon-class="fs-3" />
-									</a>
-
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="pencil" icon-class="fs-3" />
-									</a>
-
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-										<KTIcon icon-name="trash" icon-class="fs-3" />
-									</a>
-								</td> -->
 								</tr>
 							</template>
 						</tbody>
@@ -148,7 +125,7 @@
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
-	name: 'StaffList',
+	name: 'CustomerList',
 	components: {},
 	props: {
 		widgetClasses: {
@@ -157,15 +134,13 @@ export default defineComponent({
 	},
 	setup() {
 		const checkedRows = ref<Array<number>>([])
-
-
 		const list = ref([
 			{
 				id: '#S674837',
 				image: getAssetPath('media/avatars/300-14.jpg'),
 				name: 'Mehrshad Khalili',
 				email: 'example@example.com',
-				role: 'Administrator',
+				phoneNumber: '+1 (555) 123-4567',
 				lastLogin: 'Yesterday',
 				dateJoined: '2022/02/01'
 			},
@@ -174,7 +149,7 @@ export default defineComponent({
 				image: getAssetPath('media/avatars/300-14.jpg'),
 				name: 'Mehrshad Khalili',
 				email: 'example@example.com',
-				role: 'Administrator',
+				phoneNumber: '+1 (555) 123-4567',
 				lastLogin: 'Yesterday',
 				dateJoined: '2022/02/01'
 			},
@@ -183,7 +158,7 @@ export default defineComponent({
 				image: getAssetPath('media/avatars/300-14.jpg'),
 				name: 'Mehrshad Khalili',
 				email: 'example@example.com',
-				role: 'Administrator',
+				phoneNumber: '+1 (555) 123-4567',
 				lastLogin: 'Yesterday',
 				dateJoined: '2022/02/01'
 			},
@@ -192,7 +167,7 @@ export default defineComponent({
 				image: getAssetPath('media/avatars/300-14.jpg'),
 				name: 'Mehrshad Khalili',
 				email: 'example@example.com',
-				role: 'Administrator',
+				phoneNumber: '+1 (555) 123-4567',
 				lastLogin: 'Yesterday',
 				dateJoined: '2022/02/01'
 			},
@@ -201,7 +176,7 @@ export default defineComponent({
 				image: getAssetPath('media/avatars/300-14.jpg'),
 				name: 'Mehrshad Khalili',
 				email: 'example@example.com',
-				role: 'Administrator',
+				phoneNumber: '+1 (555) 123-4567',
 				lastLogin: 'Yesterday',
 				dateJoined: '2022/02/01'
 			},
