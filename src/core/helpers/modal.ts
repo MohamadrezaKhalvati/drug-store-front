@@ -1,20 +1,20 @@
-import { Modal } from "bootstrap";
-
+import { Modal } from 'bootstrap'
+/* eslint-disable func-style */
 const hideModal = (modalEl: HTMLElement | null): void => {
   if (!modalEl) {
-    return;
+    return
   }
 
-  const myModal = Modal.getInstance(modalEl);
-  myModal?.hide();
-};
+  const myModal = Modal.getInstance(modalEl)
+  myModal?.hide()
+}
 
 const removeModalBackdrop = (): void => {
-  if (document.querySelectorAll(".modal-backdrop.fade.show").length) {
-    document.querySelectorAll(".modal-backdrop.fade.show").forEach((item) => {
-      item.remove();
-    });
+  if (document.querySelectorAll('.modal-backdrop.fade.show').length) {
+    document.querySelectorAll('.modal-backdrop.fade.show').forEach((item) => {
+      item.remove()
+    })
   }
-};
+}
 
-export { removeModalBackdrop, hideModal };
+export { hideModal, removeModalBackdrop }

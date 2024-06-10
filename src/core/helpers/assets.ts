@@ -1,24 +1,25 @@
-import { illustrationsSet } from "@/layouts/default-layout/config/helper";
-import { useThemeStore } from "@/stores/theme";
+/* eslint-disable func-style */
+import { illustrationsSet } from '@/layouts/default-layout/config/helper'
+import { useThemeStore } from '@/stores/theme'
 
 export const getIllustrationsPath = (illustrationName: string): string => {
   const extension = illustrationName.substring(
-    illustrationName.lastIndexOf("."),
-    illustrationName.length
-  );
+    illustrationName.lastIndexOf('.'),
+    illustrationName.length,
+  )
   const illustration =
-    useThemeStore().mode == "dark"
+    useThemeStore().mode == 'dark'
       ? `${illustrationName.substring(
           0,
-          illustrationName.lastIndexOf(".")
+          illustrationName.lastIndexOf('.'),
         )}-dark`
-      : illustrationName.substring(0, illustrationName.lastIndexOf("."));
+      : illustrationName.substring(0, illustrationName.lastIndexOf('.'))
   return (
     import.meta.env.BASE_URL +
     `media/illustrations/${illustrationsSet.value}/${illustration}${extension}`
-  );
-};
+  )
+}
 
 export const getAssetPath = (path: string): string => {
-  return import.meta.env.BASE_URL + path;
-};
+  return import.meta.env.BASE_URL + path
+}
