@@ -19,9 +19,7 @@
 						Add Product
 					</a>
 				</div>
-
 			</div>
-
 			<div class="card-body py-3">
 				<div class="table-responsive">
 					<table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
@@ -128,8 +126,8 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from '@/core/helpers/assets';
-import { defineComponent, ref } from 'vue';
+import { getAssetPath } from '@/core/helpers/assets'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
 	name: 'ProductList',

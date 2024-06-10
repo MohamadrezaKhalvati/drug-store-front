@@ -12,3 +12,17 @@
 // Layout
 @import "./core/layout/base/layout";
 @import "layout/layout";
+
+
+$bt-primary-dark :#335E90;
+$bt-light-blue  :#E7F4FC;
+
+.bt-dark {
+	color : white!important;
+	background-color:  $bt-primary-dark!important;
+}
+
+.bt-blue-light { 
+	color : $bt-primary-dark!important;
+	background-color: $bt-light-blue!important ;
+}

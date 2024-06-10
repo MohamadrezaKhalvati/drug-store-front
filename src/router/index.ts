@@ -64,6 +64,15 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: '/Setting',
+        name: 'Setting',
+        component: () => import('@/views/Settings.vue'),
+        meta: {
+          pageTitle: 'Setting',
+          breadcrumbs: ['Setting'],
+        },
+      },
+      {
         path: '/crafted/pages/profile',
         name: 'profile',
         component: () => import('@/components/page-layouts/Profile.vue'),
