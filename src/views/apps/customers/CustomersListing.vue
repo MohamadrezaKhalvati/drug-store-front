@@ -1,39 +1,29 @@
 <template>
 	<div class="card">
 		<div class="card-header border-0 pt-6">
-			<!--begin::Card title-->
 			<div class="card-title">
-				<!--begin::Search-->
 				<div class="d-flex align-items-center position-relative my-1">
 					<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
 					<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
 						placeholder="Search Customers" @input="searchItems()">
 				</div>
-				<!--end::Search-->
 			</div>
-			<!--begin::Card title-->
-			<!--begin::Card toolbar-->
 			<div class="card-toolbar">
-				<!--begin::Toolbar-->
 				<div v-if="selectedIds.length === 0" class="d-flex justify-content-end"
 					data-kt-customer-table-toolbar="base">
-					<!--begin::Export-->
 					<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal"
 						data-bs-target="#kt_customers_export_modal">
 						<KTIcon icon-name="exit-up" icon-class="fs-2" />
 						Export
 					</button>
-					<!--end::Export-->
-					<!--begin::Add customer-->
+
 					<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_add_customer">
 						<KTIcon icon-name="plus" icon-class="fs-2" />
 						Add Customer
 					</button>
-					<!--end::Add customer-->
 				</div>
-				<!--end::Toolbar-->
-				<!--begin::Group actions-->
+
 				<div v-else class="d-flex justify-content-end align-items-center"
 					data-kt-customer-table-toolbar="selected">
 					<div class="fw-bold me-5">
@@ -43,8 +33,7 @@
 						Delete Selected
 					</button>
 				</div>
-				<!--end::Group actions-->
-				<!--begin::Group actions-->
+
 				<div class="d-flex justify-content-end align-items-center d-none"
 					data-kt-customer-table-toolbar="selected">
 					<div class="fw-bold me-5">
@@ -54,9 +43,7 @@
 						Delete Selected
 					</button>
 				</div>
-				<!--end::Group actions-->
 			</div>
-			<!--end::Card toolbar-->
 		</div>
 		<div class="card-body pt-0">
 			<Datatable :data="tableData" :header="tableHeader" :enable-items-per-page-dropdown="true"
@@ -70,43 +57,36 @@
 					</a>
 				</template>
 				<template #company="{ row: customer }">
-					{{ customer.company }}
+					customer company
 				</template>
 				<template #paymentMethod="{ row: customer }">
-					<img :src="customer.payment.icon" class="w-35px me-3" alt="">{{
-						customer.payment.ccnumber
-					}}
+
+					customer payment ccnumber
+
 				</template>
 				<template #date="{ row: customer }">
-					{{ customer.date }}
+					customer date
 				</template>
 				<template #actions="{ row: customer }">
 					<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click"
 						data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">Actions
 						<KTIcon icon-name="down" icon-class="fs-5 m-0" />
 					</a>
-					<!--begin::Menu-->
 					<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
 						data-kt-menu="true">
-						<!--begin::Menu item-->
 						<div class="menu-item px-3">
 							<router-link to="/apps/customers/customer-details" class="menu-link px-3">
 								View
 							</router-link>
 						</div>
-						<!--end::Menu item-->
-						<!--begin::Menu item-->
 						<div class="menu-item px-3">
 							<a class="menu-link px-3" @click="deleteCustomer(customer.id)">Delete</a>
 						</div>
-						<!--end::Menu item-->
 					</div>
-					<!--end::Menu-->
 				</template>
 			</Datatable>
 		</div>
 	</div>
-
 	<ExportCustomerModal />
 	<AddCustomerModal />
 </template>

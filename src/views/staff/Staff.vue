@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import StaffList from '@/components/widgets/tables/StaffList.vue'
-import { defineComponent } from 'vue'
+import StaffList from '@/components/staff/StaffList.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'Staff',

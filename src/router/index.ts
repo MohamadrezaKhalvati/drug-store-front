@@ -21,19 +21,37 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/staff',
         name: 'staff',
-        component: () => import('@/views/Staff.vue'),
+        component: () => import('@/views/staff/Staff.vue'),
         meta: {
           pageTitle: 'staff',
           breadcrumbs: ['staff'],
         },
       },
       {
+        path: '/staff/staff-details',
+        name: 'staff-details',
+        component: () => import('@/views/staff/StaffProfile.vue'),
+        meta: {
+          pageTitle: 'staff Details',
+          breadcrumbs: ['staff', 'detail'],
+        },
+      },
+      {
         path: '/Customer',
         name: 'Customer',
-        component: () => import('@/views/Customer.vue'),
+        component: () => import('@/views/customer/Customer.vue'),
         meta: {
           pageTitle: 'Customer',
           breadcrumbs: ['Customer'],
+        },
+      },
+      {
+        path: '/customers/customer-detail',
+        name: 'customer-detail',
+        component: () => import('@/views/customer/customerProfile.vue'),
+        meta: {
+          pageTitle: 'Customers ',
+          breadcrumbs: ['Customer', ' Customer Page'],
         },
       },
       {

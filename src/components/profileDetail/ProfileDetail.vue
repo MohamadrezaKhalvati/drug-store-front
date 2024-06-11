@@ -161,7 +161,7 @@
 						</VForm>
 					</div>
 					<div id="kt_signin_email_button" :class="{ 'd-none': emailFormDisplay }" class="ms-auto">
-						<button class="btn bt-blue-light fs-6 px-6" @click="emailFormDisplay = !emailFormDisplay">
+						<button class="btn bt-blue-light fs-6 px-6" @click="changeEmailModal = !changeEmailModal">
 							Change Email
 						</button>
 					</div>
@@ -312,21 +312,28 @@
 			<span class="mx-5">Save All</span>
 		</button>
 	</div>
+
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
+import ChangeEmail from '../changeEmail/ChangeEmail.vue';
 
 export default defineComponent({
 	name: 'ProfileDetail',
 	components: {},
 	setup() {
+		const emailFormDisplay = ref(false)
+		const changeEmailModal = ref(false)
+
 
 		function updatePassword() {
 
 		}
 		return {
-			updatePassword
+			updatePassword,
+			changeEmailModal,
+			emailFormDisplay
 		}
 	}
 })

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import CustomerList from '@/components/customerList/CustomerList.vue';
-import { defineComponent } from 'vue';
+import CustomerList from '@/components/customerList/CustomerList.vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
 	name: 'Customer',

@@ -66,22 +66,23 @@
 												type="checkbox" :value="index">
 										</div>
 									</td>
+									<router-link :to="`/staff/staff-details`" class="menu-link px-3">
+										<td>
+											<div class="d-flex align-items-center">
+												<div class="symbol symbol-45px me-5">
+													<img :src="item.image" alt="">
+												</div>
+												<div class="d-flex justify-content-start flex-column">
+													<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
+														item.name }}</a>
 
-									<td>
-										<div class="d-flex align-items-center">
-											<div class="symbol symbol-45px me-5">
-												<img :src="item.image" alt="">
-											</div>
-											<div class="d-flex justify-content-start flex-column">
-												<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
-													item.name }}</a>
-
-												<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.id
+													<span class="text-muted fw-semibold text-muted d-block fs-7">{{
+														item.id
 													}}</span>
+												</div>
 											</div>
-										</div>
-									</td>
-
+										</td>
+									</router-link>
 									<td>
 										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
 											item.email }}</a>
