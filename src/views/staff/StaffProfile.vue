@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div class="d-flex align-items-end mb-3 mx-9">
-				<button type="button" class="btn btn-danger  fs-6" @click="deleteProfile">
+				<button type="button" class="btn bt-red  fs-6" @click="deleteProfile">
 					Delete Profile
 				</button>
 			</div>

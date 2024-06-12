@@ -7,13 +7,12 @@
 				<slot :name="name" :row="item" />
 			</template>
 		</TableContent>
-		<TableFooter v-model:itemsPerPage="itemsInTable" :current-page="currentPage" :count="totalItems"
-			:items-per-page-dropdown-enabled="itemsPerPageDropdownEnabled" @page-change="pageChange" />
+		<!-- <TableFooter v-model:itemsPerPage="itemsInTable" :current-page="currentPage" :count="totalItems"
+			:items-per-page-dropdown-enabled="itemsPerPageDropdownEnabled" @page-change="pageChange" /> -->
 	</div>
 </template>
 
 <script lang="ts">
-import TableFooter from '@/components/kt-datatable/table-partials/TableFooter.vue';
 import type { Sort } from '@/components/kt-datatable/table-partials/models';
 import TableContent from '@/components/kt-datatable/table-partials/table-content/TableContent.vue';
 import { computed, defineComponent, ref, watch } from 'vue';
@@ -22,7 +21,6 @@ export default defineComponent({
 	name: 'KtDatatable',
 	components: {
 		TableContent,
-		TableFooter,
 	},
 	props: {
 		header: { type: Array, required: true },

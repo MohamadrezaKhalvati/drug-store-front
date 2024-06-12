@@ -380,9 +380,9 @@
 </template>
 
 <script lang="ts">
+import PaymentMethods from '@/components/customers/cards/overview/AddressBook.vue'
 import CreditBalance from '@/components/customers/cards/overview/CreditBalance.vue'
 import Invoices from '@/components/customers/cards/overview/Invoices.vue'
-import PaymentMethods from '@/components/customers/cards/overview/PaymentMethods.vue'
 import PaymentRecords from '@/components/customers/cards/overview/PaymentRecords.vue'
 import Dropdown3 from '@/components/dropdown/Dropdown3.vue'
 import NewCardModal from '@/components/modals/forms/NewCardModal.vue'

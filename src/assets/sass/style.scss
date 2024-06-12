@@ -17,7 +17,16 @@
 $bt-primary-dark :#335E90;
 $bt-light-blue  :#E7F4FC;
 
-.bt-dark {
+
+$bt-red-text :#D61600;
+$bt-red-background : #FFCCC6;
+
+.bt-red {
+	color :$bt-red-text!important;
+	background-color : $bt-red-background!important;
+}
+
+.bt-blue-dark {
 	color : white!important;
 	background-color:  $bt-primary-dark!important;
 }

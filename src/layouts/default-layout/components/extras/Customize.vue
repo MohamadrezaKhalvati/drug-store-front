@@ -26,8 +26,8 @@
     <div class="card border-0 shadow-none rounded-0 w-100">
       <!--begin::Card header-->
       <div
-        class="card-header bgi-position-y-bottom bgi-position-x-end bgi-size-cover bgi-no-repeat rounded-0 border-0 py-4"
         id="kt_app_layout_builder_header"
+        class="card-header bgi-position-y-bottom bgi-position-x-end bgi-size-cover bgi-no-repeat rounded-0 border-0 py-4"
         :style="{
           backgroundImage: `url(
             ${getAssetPath('media/misc/layout/customizer-header-bg.jpg')}
@@ -45,9 +45,9 @@
         <!--begin::Card toolbar-->
         <div class="card-toolbar">
           <button
+            id="kt_app_layout_builder_close"
             type="button"
             class="btn btn-sm btn-icon btn-color-white p-0 w-20px h-20px rounded-1"
-            id="kt_app_layout_builder_close"
           >
             <KTIcon icon-name="cross-square" icon-class="fs-2" />
           </button>
@@ -56,7 +56,7 @@
       </div>
       <!--end::Card header-->
       <!--begin::Card body-->
-      <div class="card-body position-relative" id="kt_app_layout_builder_body">
+      <div id="kt_app_layout_builder_body" class="card-body position-relative">
         <!--begin::Content-->
         <div
           id="kt_app_settings_content"
@@ -69,19 +69,21 @@
           style="height: 710px"
         >
           <!--begin::Form-->
-          <form class="form" id="kt_app_layout_builder_form">
+          <form id="kt_app_layout_builder_form" class="form">
             <input
-              type="hidden"
               id="kt_app_layout_builder_action"
+              type="hidden"
               name="layout-builder[action]"
-            />
+            >
             <!--begin::Card body-->
             <div class="card-body p-0">
               <!--begin::Form group-->
               <div class="form-group">
                 <!--begin::Heading-->
                 <div class="mb-6">
-                  <h4 class="fw-bold text-gray-900">Theme Mode</h4>
+                  <h4 class="fw-bold text-gray-900">
+Theme Mode
+</h4>
                   <div class="fw-semibold text-muted fs-7 d-block lh-1">
                     Enjoy Dark &amp; Light modes.
                   </div>
@@ -109,7 +111,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -118,12 +120,12 @@
                       >
                         <input
                           :checked="themeMode === 'light'"
-                          @change="onThemeModeChange"
                           class="form-check-input"
                           type="radio"
                           value="light"
                           name="theme_mode"
-                        />
+                          @change="onThemeModeChange"
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">Light</div>
                         <!--end::Label-->
@@ -148,7 +150,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -156,13 +158,13 @@
                         class="form-check form-check-custom form-check-solid form-check-sm form-check-success"
                       >
                         <input
-                          @change="onThemeModeChange"
                           :checked="themeMode === 'dark'"
                           class="form-check-input"
                           type="radio"
                           value="dark"
                           name="theme_mode"
-                        />
+                          @change="onThemeModeChange"
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">Dark</div>
                         <!--end::Label-->
@@ -177,13 +179,15 @@
               </div>
               <!--end::Form group-->
               <!--begin::Separator-->
-              <div class="separator separator-dashed my-5"></div>
+              <div class="separator separator-dashed my-5" />
               <!--end::Separator-->
               <!--begin::Form group-->
               <div class="form-group">
                 <!--begin::Heading-->
                 <div class="d-flex flex-column mb-4">
-                  <h4 class="fw-bold text-gray-900">Width Mode</h4>
+                  <h4 class="fw-bold text-gray-900">
+Width Mode
+</h4>
                   <div class="fs-7 fw-semibold text-muted">
                     Page width options
                   </div>
@@ -196,12 +200,12 @@
                     class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5"
                   >
                     <input
+                      id="kt_builder_page_width_default"
                       v-model="config.general.pageWidth"
                       class="form-check-input"
                       type="radio"
                       value="default"
-                      id="kt_builder_page_width_default"
-                    />
+                    >
                     <!--begin::Label-->
                     <label
                       class="form-check-label text-gray-700 fw-bold text-nowrap"
@@ -216,12 +220,12 @@
                     class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5"
                   >
                     <input
+                      id="kt_builder_page_width_fluid"
                       v-model="config.general.pageWidth"
                       class="form-check-input"
                       type="radio"
                       value="fluid"
-                      id="kt_builder_page_width_fluid"
-                    />
+                    >
                     <!--begin::Label-->
                     <label
                       class="form-check-label text-gray-700 fw-bold text-nowrap"
@@ -236,12 +240,12 @@
                     class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5"
                   >
                     <input
+                      id="kt_builder_page_width_fixed"
                       v-model="config.general.pageWidth"
                       class="form-check-input"
                       type="radio"
                       value="fixed"
-                      id="kt_builder_page_width_fixed"
-                    />
+                    >
                     <!--begin::Label-->
                     <label
                       class="form-check-label text-gray-700 fw-bold text-nowrap"
@@ -256,13 +260,15 @@
               </div>
               <!--end::Form group-->
               <!--begin::Separator-->
-              <div class="separator separator-dashed my-5"></div>
+              <div class="separator separator-dashed my-5" />
               <!--end::Separator-->
               <!--begin::Form group-->
               <div class="form-group">
                 <!--begin::Heading-->
                 <div class="d-flex flex-column mb-4">
-                  <h4 class="fw-bold text-gray-900">Keenicons Style</h4>
+                  <h4 class="fw-bold text-gray-900">
+Keenicons Style
+</h4>
                   <div>
                     <span class="fs-7 fw-semibold text-muted"
                       >Select global UI icons style.</span
@@ -314,7 +320,7 @@
                         value="duotone"
                         :checked="config.general.iconsType === 'duotone'"
                         name="duotone"
-                      />
+                      >
                     </div>
                     <!--end::Check-->
                   </label>
@@ -355,7 +361,7 @@
                         value="outline"
                         name="outline"
                         :checked="config.general.iconsType === 'outline'"
-                      />
+                      >
                     </div>
                     <!--end::Check-->
                   </label>
@@ -396,7 +402,7 @@
                         value="solid"
                         name="solid"
                         :checked="config.general.iconsType === 'solid'"
-                      />
+                      >
                     </div>
                     <!--end::Check-->
                   </label>
@@ -406,13 +412,15 @@
               </div>
               <!--end::Form group-->
               <!--begin::Separator-->
-              <div class="separator separator-dashed my-5"></div>
+              <div class="separator separator-dashed my-5" />
               <!--end::Separator-->
               <!--begin::Form group-->
               <div class="form-group">
                 <!--begin::Heading-->
                 <div class="d-flex flex-column mb-4">
-                  <h4 class="fw-bold text-gray-900">Menu Icon</h4>
+                  <h4 class="fw-bold text-gray-900">
+Menu Icon
+</h4>
                   <div class="fs-7 fw-semibold text-muted">
                     Sidebar menu icon options
                   </div>
@@ -425,12 +433,12 @@
                     class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5"
                   >
                     <input
+                      id="kt_builder_keenthemes_icons"
                       v-model="config.sidebar.default.menu.iconType"
                       class="form-check-input"
                       type="radio"
                       value="keenthemes"
-                      id="kt_builder_keenthemes_icons"
-                    />
+                    >
                     <!--begin::Label-->
                     <label
                       class="form-check-label text-gray-700 fw-bold text-nowrap"
@@ -445,12 +453,12 @@
                     class="form-check form-check-custom form-check-success form-check-solid form-check-sm me-5"
                   >
                     <input
+                      id="kt_builder_bootstrap_icons"
                       v-model="config.sidebar.default.menu.iconType"
                       class="form-check-input"
                       type="radio"
                       value="bootstrap"
-                      id="kt_builder_bootstrap_icons"
-                    />
+                    >
                     <!--begin::Label-->
                     <label
                       class="form-check-label text-gray-700 fw-bold text-nowrap"
@@ -465,13 +473,15 @@
               </div>
               <!--end::Form group-->
               <!--begin::Separator-->
-              <div class="separator separator-dashed my-5"></div>
+              <div class="separator separator-dashed my-5" />
               <!--end::Separator-->
               <!--begin::Form group-->
               <div class="form-group">
                 <!--begin::Heading-->
                 <div class="mb-6">
-                  <h4 class="fw-bold text-gray-900">Layouts</h4>
+                  <h4 class="fw-bold text-gray-900">
+Layouts
+</h4>
                   <span class="fw-semibold text-muted fs-7 lh-1"
                     >4 main layouts.{{ " " }}</span
                   >
@@ -502,7 +512,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -515,7 +525,7 @@
                           type="radio"
                           value="dark-sidebar"
                           name="layoutType"
-                        />
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">
                           Dark Sidebar
@@ -542,7 +552,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -555,7 +565,7 @@
                           type="radio"
                           value="light-sidebar"
                           name="layoutType"
-                        />
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">
                           Light Sidebar
@@ -582,7 +592,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -595,7 +605,7 @@
                           type="radio"
                           value="dark-header"
                           name="layoutType"
-                        />
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">
                           Dark Header
@@ -622,7 +632,7 @@
                           "
                           class="mw-100"
                           alt=""
-                        />
+                        >
                       </div>
                       <!--end::Image-->
                       <!--begin::Check-->
@@ -635,7 +645,7 @@
                           type="radio"
                           value="light-header"
                           name="layoutType"
-                        />
+                        >
                         <!--begin::Label-->
                         <div class="form-check-label text-gray-700">
                           Light Header
@@ -661,24 +671,24 @@
       <!--end::Card body-->
       <!--begin::Card footer-->
       <div
-        class="card-footer border-0 d-flex gap-3 pb-9 pt-0"
         id="kt_app_layout_builder_footer"
+        class="card-footer border-0 d-flex gap-3 pb-9 pt-0"
       >
         <button
-          type="button"
-          @click="submit"
           id="kt_app_layout_builder_preview"
+          type="button"
           class="btn btn-primary flex-grow-1 fw-semibold"
+          @click="submit"
         >
           <!--begin::Indicator label-->
           <span class="indicator-label">Preview</span>
           <!--end::Indicator label-->
         </button>
         <button
-          @click="reset"
-          type="button"
           id="kt_app_layout_builder_reset"
+          type="button"
           class="btn btn-light flex-grow-1 fw-semibold"
+          @click="reset"
         >
           <!--begin::Indicator label-->
           <span class="indicator-label">Reset</span>
@@ -688,8 +698,7 @@
             >Please wait...
             <span
               class="spinner-border spinner-border-sm align-middle ms-2"
-            ></span
-          ></span>
+            /></span>
           <!--end::Indicator progress-->
         </button>
       </div>
@@ -700,54 +709,54 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent, ref } from "vue";
-import { config, layout, themeMode } from "@/layouts/default-layout/config/helper";
-import { LS_CONFIG_NAME_KEY, useConfigStore } from "@/stores/config";
-import { useThemeStore } from "@/stores/theme";
+import { getAssetPath } from '@/core/helpers/assets'
+import { config, layout, themeMode } from '@/layouts/default-layout/config/helper'
+import { LS_CONFIG_NAME_KEY, useConfigStore } from '@/stores/config'
+import { useThemeStore } from '@/stores/theme'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: "customize-layout",
+  name: 'CustomizeLayout',
   components: {},
   setup() {
-    const storeConfig = useConfigStore();
-    const storeTheme = useThemeStore();
+    const storeConfig = useConfigStore()
+    const storeTheme = useThemeStore()
 
-    const layoutType = ref(layout.value);
+    const layoutType = ref(layout.value)
 
     /**
      * Reset config
      * @param e
      */
     const reset = (e: Event) => {
-      e.preventDefault();
+      e.preventDefault()
       // remove existing saved config
-      localStorage.removeItem(LS_CONFIG_NAME_KEY);
-      window.location.reload();
-    };
+      localStorage.removeItem(LS_CONFIG_NAME_KEY)
+      window.location.reload()
+    }
 
     const onThemeModeChange = (e: Event) => {
-      const target = e.target as HTMLInputElement;
+      const target = e.target as HTMLInputElement
 
-      storeConfig.setLayoutConfigProperty("general.mode", target.value);
-      storeTheme.setThemeMode(target.value as "dark" | "light" | "system");
+      storeConfig.setLayoutConfigProperty('general.mode', target.value)
+      storeTheme.setThemeMode(target.value as 'dark' | 'light' | 'system')
 
       // save new config to localStorage
-      localStorage.setItem(LS_CONFIG_NAME_KEY, JSON.stringify(config.value));
-    };
+      localStorage.setItem(LS_CONFIG_NAME_KEY, JSON.stringify(config.value))
+    }
 
     /**
      * Submit form
      * @param event
      */
     const submit = (event: Event) => {
-      event.preventDefault();
+      event.preventDefault()
 
-      storeConfig.setLayoutConfigProperty("general.layout", layoutType);
+      storeConfig.setLayoutConfigProperty('general.layout', layoutType)
       // save new config to localStorage
-      localStorage.setItem(LS_CONFIG_NAME_KEY, JSON.stringify(config.value));
-      window.location.reload();
-    };
+      localStorage.setItem(LS_CONFIG_NAME_KEY, JSON.stringify(config.value))
+      window.location.reload()
+    }
 
     return {
       reset,
@@ -757,7 +766,7 @@ export default defineComponent({
       layoutType,
       themeMode,
       getAssetPath,
-    };
+    }
   },
-});
+})
 </script>
