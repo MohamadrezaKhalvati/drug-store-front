@@ -113,9 +113,10 @@
 						</VForm>
 					</div>
 					<div id="kt_signin_email_button" :class="{ 'd-none': emailFormDisplay }" class="ms-auto">
-						<button class="btn bt-blue-light fs-6 px-6" @click="changeEmailModal = !changeEmailModal">
+						<a class="btn bt-blue-light fs-6 px-6" data-bs-toggle="modal"
+							data-bs-target="#change-email-modal">
 							Change Email
-						</button>
+						</a>
 					</div>
 				</div>
 
@@ -198,9 +199,10 @@
 						</VForm>
 					</div>
 					<div id="kt_signin_password_button" class="ms-auto" :class="{ 'd-none': passwordFormDisplay }">
-						<button class="btn bt-blue-light fs-6" @click="passwordFormDisplay = !passwordFormDisplay">
+						<a class="btn bt-blue-light fs-6" data-bs-toggle="modal"
+							data-bs-target="#change-password-modal">
 							Change Password
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -265,20 +267,26 @@
 		</button>
 	</div>
 
+
+
+	<ChangeEmail />
+	<ChangePasswordModal />
+
 </template>
 
 <script>
+import ChangeEmail from '@/components/modals/forms/ChangeEmail.vue';
 import { defineComponent, ref } from 'vue';
+import ChangePasswordModal from '../modals/forms/ChangePasswordModal.vue';
 import PersonalInformation from '../personalInformation/PersonalInformation.vue';
-
 export default defineComponent({
 	name: 'ProfileDetail',
 	components: {
-		PersonalInformation
+		PersonalInformation, ChangeEmail, ChangePasswordModal
 	},
 	setup() {
 		const emailFormDisplay = ref(false)
-		const changeEmailModal = ref(false)
+
 
 
 		function updatePassword() {
@@ -286,7 +294,6 @@ export default defineComponent({
 		}
 		return {
 			updatePassword,
-			changeEmailModal,
 			emailFormDisplay
 		}
 	}

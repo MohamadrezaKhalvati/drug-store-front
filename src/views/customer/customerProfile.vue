@@ -93,15 +93,19 @@
 					<a class="nav-link text-active-primary pb-4" data-bs-toggle="tab"
 						href="#kt_customer_view_overview_events_and_logs_tab">Personal Information</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item ">
 					<a class="nav-link text-active-primary pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab"
 						href="#kt_customer_view_overview_statements">Advance Setting</a>
 				</li>
-				<li class="nav-item ms-auto">
-					<a href="#" class="btn bt-red ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent"
-						data-kt-menu-placement="bottom-end">
+				<li class="nav-item ms-auto ">
+					<a href="#" class="btn btn-sm  bt-red ps-7 mx-3" data-kt-menu-trigger="click"
+						data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 						Delete Profile
 					</a>
+					<button href="#" class="btn btn-sm bt-blue-dark ps-7" data-kt-menu-trigger="click"
+						data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+						Edit Profile
+					</button>
 					<Dropdown3 />
 				</li>
 			</ul>
@@ -121,14 +125,16 @@
 					</div>
 				</div>
 				<div id="kt_customer_view_overview_statements" class="tab-pane fade" role="tabpanel">
-
 					<SecurityDetails />
 					<PaymentMethods cardClasses="mb-6 mb-xl-9" />
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!--  MODALS -->
 	<NewCardModal />
+
 </template>
 
 <script lang="ts">
@@ -138,10 +144,12 @@ import PaymentRecords from '@/components/customers/cards/overview/PaymentRecords
 import PaymentMethods from '@/components/customers/cards/paymentMethods/PaymentMethods.vue'
 import SecurityDetails from '@/components/customers/cards/securityDetails/SecurityDetails.vue'
 import Dropdown3 from '@/components/dropdown/Dropdown3.vue'
+import ChangePasswordModal from '@/components/modals/forms/ChangePasswordModal.vue'
 import NewCardModal from '@/components/modals/forms/NewCardModal.vue'
 import PersonalInformation from '@/components/personalInformation/PersonalInformation.vue'
 import { getAssetPath } from '@/core/helpers/assets'
 import { defineComponent, ref } from 'vue'
+
 export default defineComponent({
 	name: 'CustomerProfile',
 	components: {
@@ -152,7 +160,7 @@ export default defineComponent({
 		PersonalInformation,
 		SecurityDetails,
 		AddressBook,
-		PaymentMethods
+		PaymentMethods,
 	},
 	setup() {
 		const customer = ref({

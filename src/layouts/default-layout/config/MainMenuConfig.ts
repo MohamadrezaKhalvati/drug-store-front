@@ -45,6 +45,12 @@ const MainMenuConfig: Array<MenuItem> = [
         keenthemesIcon: 'element-11',
         bootstrapIcon: 'bi-app-indicator',
       },
+      {
+        heading: 'Help Center',
+        route: '/help-center',
+        keenthemesIcon: 'element-11',
+        bootstrapIcon: 'bi-app-indicator',
+      },
     ],
   },
   {

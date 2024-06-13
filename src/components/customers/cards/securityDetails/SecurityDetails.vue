@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-lg-1">
 					<a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_new_card">
+						data-bs-target="#change-phone-number-modal">
 						<span data-bs-toggle="tooltip" data-bs-trigger="hover" title="" data-bs-original-title="Edit">
 							<KTIcon icon-name="pencil" icon-class="fs-3" />
 						</span>
@@ -32,7 +32,7 @@
 				</div>
 				<div class="col-lg-1">
 					<a href="#" class="btn btn-icon btn-active-light-primary  w-30px h-30px me-3" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_new_card">
+						data-bs-target="#change-password-modal">
 						<KTIcon icon-name="pencil" icon-class="fs-3" />
 					</a>
 				</div>
@@ -40,13 +40,19 @@
 
 		</div>
 	</div>
+
+	<ChangePhoneNumber />
+	<ChangePasswordModal />
 </template>
 
 <script lang="ts">
+import ChangePasswordModal from '@/components/modals/forms/ChangePasswordModal.vue';
+import ChangePhoneNumber from '@/components/modals/forms/ChangePhoneNumber.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'SecurityDetail',
+	components: { ChangePhoneNumber, ChangePasswordModal },
 	props: {
 		cardClasses: {
 			type: String,

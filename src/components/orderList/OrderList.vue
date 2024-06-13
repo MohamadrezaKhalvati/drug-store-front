@@ -10,11 +10,11 @@
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
-					<a href="#" class="btn btn-sm btn-light-primary me-2" data-bs-toggle="modal"
+					<a href="#" class="btn  btn-light-primary me-3" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Filter
 					</a>
-					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+					<a href="#" class="btn   bt-blue-dark " data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Add Order
 					</a>
@@ -24,7 +24,7 @@
 				<div class="table-responsive">
 					<table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
 						<thead>
-							<tr class="fw-bold text-muted">
+							<tr class=" text-muted">
 								<th class="w-25px">
 									<div class="form-check form-check-sm form-check-custom form-check-solid">
 										<input class="form-check-input" type="checkbox" @change="
@@ -66,30 +66,31 @@
 									</td>
 
 									<td>
-										<span class="text-muted fw-semibold text-muted d-block fs-7">{{ item.id
+										<span class=" fw-semibold text-muted d-block fs-7">{{ item.id
 											}}</span>
 									</td>
 									<td>
-										<div class="d-flex align-items-center   justify-content-center">
+										<div class="d-flex align-items-center justify-content-center">
 											<div class="d-flex justify-content-start flex-row">
 												<div class="symbol symbol-45px me-5">
 													<img :src="item.image" alt="">
 												</div>
-												<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-6">{{
-													item.customer }}</a>
+												<a href="#"
+													class=" d-flex align-items-center text-gray-900  text-hover-primary fs-6">{{
+														item.customer }}</a>
 
 											</div>
 										</div>
 									</td>
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+										<a href="#" class="text-gray-900  text-hover-primary d-block fs-6">
 											{{ item.status }}
 										</a>
 									</td>
 									<td class="text-end">
 										<div class="d-flex flex-column w-100 me-2">
 											<div class="d-flex flex-stack mb-2">
-												<span class=" me-2 fs-7  fw-bold">
+												<span class=" me-2 fs-7   text-muted">
 													${{ item.totalPrice }}
 												</span>
 											</div>
@@ -97,12 +98,13 @@
 									</td>
 
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.dateJoined }}</a>
+										<span class="text-gray-900 text-muted   text-hover-primary d-block
+											 fs-6">{{
+												item.dateJoined }}</span>
 									</td>
 									<td>
 										<div class="d-flex justify-content-center">
-											<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+											<a href="#" class="btn btn-sm btn-light-primary " data-bs-toggle="modal"
 												data-bs-target="#kt_modal_invite_friends ">
 												Action
 												<KTIcon icon-name="down" icon-class="fs-3" />

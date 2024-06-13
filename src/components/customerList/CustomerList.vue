@@ -10,14 +10,14 @@
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
-					<a href="#" class="btn btn-sm btn-light-primary me-2" data-bs-toggle="modal"
+					<a href="#" class="btn  btn-light-primary me-2" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Filter
 					</a>
-					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+					<button type="button" class="btn bt-blue-dark" data-bs-toggle="modal"
+						data-bs-target="#kt_modal_add_customer">
 						Add Customer
-					</a>
+					</button>
 				</div>
 
 			</div>
@@ -120,6 +120,8 @@
 			</div>
 		</div>
 	</div>
+
+	<AddCustomerModal />
 </template>
 
 <script lang="ts">
@@ -127,9 +129,12 @@
 // import type { ICustomer } from '@/core/data/customers';
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
+import AddCustomerModal from '../modals/forms/AddCustomerModal.vue';
 export default defineComponent({
 	name: 'CustomerList',
-	components: {},
+	components: {
+		AddCustomerModal
+	},
 	props: {
 		widgetClasses: {
 			type: String, required: false, default: ''

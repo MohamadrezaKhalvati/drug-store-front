@@ -3,10 +3,10 @@
 	<div id="kt_modal_new_card" ref="newCardModalRef" class="modal fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered mw-650px">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header justify-content-between">
 					<h2>Add New Card </h2>
 					<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-						<KTIcon icon-name="cross" icon-class="fs-1" />
+						<KTIcon icon-name="cross-circle" icon-class="fs-1" />
 					</div>
 				</div>
 				<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
@@ -35,30 +35,50 @@
 							<div class="position-relative">
 								<Field v-model="cardData.cardNumber" type="text" class="form-control form-control-solid"
 									placeholder="Enter card number" name="cardNumber" />
+
+
+								<div class="position-absolute translate-middle-y top-50 end-0 me-3">
+									<KTIcon icon-name="credit-cart" icon-class="fs-2hx" />
+								</div>
+
 								<div class="fv-plugins-message-container">
 									<div class="fv-help-block">
 										<ErrorMessage name="cardNumber" />
 									</div>
 								</div>
+							</div>
+						</div>
 
-								<div class="position-absolute translate-middle-y top-50 end-0 me-5">
-									<img :src="getAssetPath('media/svg/card-logos/visa.svg')" alt="" class="h-25px">
-									<img :src="getAssetPath('media/svg/card-logos/mastercard.svg')" alt=""
-										class="h-25px">
-									<img :src="getAssetPath('media/svg/card-logos/american-express.svg')
-										" alt="" class="h-25px">
+
+						<!--  cvv2 -->
+						<div class="col-md-12 fv-row">
+							<label class="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
+								<span class="required">CVV2</span>
+							</label>
+
+							<div class="position-relative">
+								<Field v-model="cardData.cvv2" type="text" class="form-control form-control-solid"
+									minlength="3" maxlength="4" placeholder="1234" name="cvv" />
+
+								<div class="position-absolute translate-middle-y top-50 end-0 me-3">
+									<KTIcon icon-name="credit-cart" icon-class="fs-2hx" />
+								</div>
+							</div>
+							<div class="fv-plugins-message-container">
+								<div class="fv-help-block">
+									<ErrorMessage name="cvv" />
 								</div>
 							</div>
 						</div>
-						<div class="row mb-10">
-							<div class="col-md-8 fv-row">
+
+						<div class="row mb-10 mt-8">
+							<div class="col-md-12 fv-row">
 								<label class="required fs-6 fw-semibold form-label mb-2">Expiration Date</label>
 
 								<div class="row fv-row">
-
 									<div class="col-6">
 										<Field v-model="cardData.expirationMonth" name="expirationMonth"
-											class="form-select form-select-solid" data-control="select2"
+											class="form-select form-select-solid fw-bold" data-control="select2"
 											data-hide-search="true" data-placeholder="Month" as="select">
 											<option />
 											<template v-for="i in 12" :key="i">
@@ -93,56 +113,15 @@
 									</div>
 								</div>
 							</div>
-
-							<div class="col-md-4 fv-row">
-								<label class="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
-									<span class="required">CVV</span>
-									<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-										title="Enter a card CVV code" />
-								</label>
-
-								<div class="position-relative">
-
-									<Field v-model="cardData.cvv" type="text" class="form-control form-control-solid"
-										minlength="3" maxlength="4" placeholder="CVV" name="cvv" />
-
-									<div class="position-absolute translate-middle-y top-50 end-0 me-3">
-										<KTIcon icon-name="credit-cart" icon-class="fs-2hx" />
-									</div>
-								</div>
-								<div class="fv-plugins-message-container">
-									<div class="fv-help-block">
-										<ErrorMessage name="cvv" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="d-flex flex-stack">
-
-							<div class="me-5">
-								<label class="fs-6 fw-semibold form-label">Save Card for further billing?</label>
-								<div class="fs-7 fw-semibold text-gray-500">
-									If you need more info, please check budget planning
-								</div>
-							</div>
-
-							<label class="form-check form-switch form-check-custom form-check-solid">
-								<input class="form-check-input" type="checkbox" value="1" checked>
-								<span class="form-check-label fw-semibold text-gray-500">
-									Save Card
-								</span>
-							</label>
 						</div>
 
 						<div class="text-center pt-15">
-							<button id="kt_modal_new_card_cancel" type="reset" class="btn btn-light me-3">
+							<button id="kt_modal_new_card_cancel" type="reset" class="btn btn-light px-10">
 								Discard
 							</button>
-
-							<button id="kt_modal_new_card_submit" ref="submitButtonRef" type="submit"
-								class="btn btn-primary">
-								<span class="indicator-label"> Submit </span>
+							<button id="kt_modal_new_card_submit " ref="submitButtonRef" type="submit"
+								class="btn  bt-blue-dark px-10">
+								<span class="indicator-label"> Save </span>
 								<span class="indicator-progress">
 									Please wait...
 									<span class="spinner-border spinner-border-sm align-middle ms-2" />
@@ -169,7 +148,7 @@ interface CardData {
 	cardNumber: string;
 	expirationMonth: string;
 	expirationYear: string;
-	cvv: string;
+	cvv2: string;
 }
 
 export default defineComponent({
@@ -188,7 +167,7 @@ export default defineComponent({
 			cardNumber: '4111 1111 1111 1111',
 			expirationMonth: '',
 			expirationYear: '',
-			cvv: '',
+			cvv2: '',
 		})
 
 		const validationSchema = Yup.object().shape({
@@ -196,7 +175,7 @@ export default defineComponent({
 			cardNumber: Yup.string().required().label('Card number'),
 			expirationMonth: Yup.string().required().label('Month'),
 			expirationYear: Yup.string().required().label('Year'),
-			cvv: Yup.string().required().label('CVV'),
+			cvv: Yup.string().required().label('CVV2'),
 		})
 
 		function submit() {

@@ -91,6 +91,15 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: '/help-center',
+        name: 'help-center',
+        component: () => import('@/views/HelpCenter.vue'),
+        meta: {
+          pageTitle: 'Help Center',
+          breadcrumbs: ['Help Center'],
+        },
+      },
+      {
         path: '/crafted/pages/profile',
         name: 'profile',
         component: () => import('@/components/page-layouts/Profile.vue'),

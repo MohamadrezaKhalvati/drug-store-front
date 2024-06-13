@@ -1,6 +1,7 @@
 <template>
 	<div id="kt_app_root" class="d-flex flex-column flex-root">
 		<router-view />
+
 	</div>
 </template>
 
