@@ -10,14 +10,15 @@
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
-					<a href="#" class="btn btn-sm btn-light-primary me-2" data-bs-toggle="modal"
+					<a href="#" class="btn bt-blue-light me-2" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Filter
 					</a>
-					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
-						Add Product
-					</a>
+					<router-link :to="'/product/add'" class="menu-link px-3">
+						<span class="btn bt-blue-dark">
+							Add Product
+						</span>
+					</router-link>
 				</div>
 			</div>
 			<div class="card-body py-3">
@@ -69,7 +70,7 @@
 									</td>
 									<td>
 										<div class="d-flex align-items-center">
-											<div class="symbol symbol-45px me-5">
+											<div class="symbol symbol-circle symbol-45px me-5">
 												<img :src="item.image" alt="">
 											</div>
 											<div class="d-flex justify-content-start flex-column">
@@ -99,8 +100,23 @@
 										</a>
 									</td>
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
-											{{ item.Rating }}</a>
+										<div class="rating">
+											<div class="rating-label me-2 checked">
+												<i class="bi bi-star fs-1" />
+											</div>
+											<div class="rating-label me-2 checked">
+												<i class="bi bi-star fs-1" />
+											</div>
+											<div class="rating-label me-2 checked">
+												<i class="bi bi-star fs-1" />
+											</div>
+											<div class="rating-label me-2 checked">
+												<i class="bi bi-star fs-1" />
+											</div>
+											<div class="rating-label me-2 checked">
+												<i class="bi bi-star fs-1" />
+											</div>
+										</div>
 									</td>
 									<td>
 										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">
@@ -126,8 +142,8 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from '@/core/helpers/assets'
-import { defineComponent, ref } from 'vue'
+import { getAssetPath } from '@/core/helpers/assets';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
 	name: 'ProductList',

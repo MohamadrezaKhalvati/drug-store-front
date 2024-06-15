@@ -7,9 +7,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="d-flex flex-lg-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 " :style="`background-image: url('${getAssetPath(
-			'./../../public/media/auth/background.svg'
-		)}')`" />
+		<div class="d-flex flex-lg-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 symbol-label symbol-25px"
+			:style="`background-image: url('${getAssetPath(
+				'./../../public/media/auth/background.svg'
+			)}')`" />
 	</div>
 </template>
 

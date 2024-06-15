@@ -1,5 +1,5 @@
 <template>
-	<div class="app-navbar flex-shrink-0">
+	<div class="app-navbar flex-shrink-0 ">
 
 		<div class="app-navbar-item ms-1 ms-md-4">
 			<div id="kt_activities_toggle"
@@ -34,11 +34,11 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from '@/core/helpers/assets'
-import { computed, defineComponent } from 'vue'
-import KTThemeModeSwitcher from '@/layouts/default-layout/components/theme-mode/ThemeModeSwitcher.vue'
 import { ThemeModeComponent } from '@/assets/ts/layout'
+import { getAssetPath } from '@/core/helpers/assets'
+import KTThemeModeSwitcher from '@/layouts/default-layout/components/theme-mode/ThemeModeSwitcher.vue'
 import { useThemeStore } from '@/stores/theme'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
 	name: 'HeaderNavbar',

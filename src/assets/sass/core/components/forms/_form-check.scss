@@ -2,6 +2,7 @@
 // Form Check
 //
 
+$form-check-primary-dark :#335E90;
 // Customization
 .form-check {
     // Input 
@@ -43,8 +44,11 @@
                 background-color: $form-check-input-bg-solid;
             }            
 
-            &[type=checkbox]:indeterminate {
-                background-color: $form-check-input-checked-bg-color;
+            &[type=checkbox ]:indeterminate {
+                background-color: $form-check-primary-dark;
+            }
+			&[type=ratio ]:indeterminate {
+                background-color: $form-check-primary-dark;
             }
         }
     }
@@ -94,7 +98,7 @@
 
     // Label
     .form-check-label {
-        margin-left: 0.55rem;
+        margin-left: 0.40rem;
     }
 }
 
@@ -124,7 +128,6 @@
     &.form-check-solid {
         .form-check-input {
             --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image-solid)};
-
             &:not(:checked) {
                 background-color: $form-check-input-bg-solid;
             } 

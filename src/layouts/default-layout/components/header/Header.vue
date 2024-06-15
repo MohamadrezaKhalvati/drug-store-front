@@ -1,5 +1,5 @@
 <template>
-	<div v-if="headerDisplay" id="kt_app_header" class="app-header" data-kt-sticky="true"
+	<div v-if="headerDisplay" id="kt_app_header" class="app-header bg-white" data-kt-sticky="true"
 		data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize"
 		data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 		<div class="app-container d-flex align-items-stretch justify-content-between" :class="{
@@ -40,17 +40,17 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from '@/core/helpers/assets'
-import { defineComponent } from 'vue'
-import KTHeaderNavbar from '@/layouts/default-layout/components/header/Navbar.vue'
+import { getAssetPath } from '@/core/helpers/assets';
+import KTHeaderNavbar from '@/layouts/default-layout/components/header/Navbar.vue';
 import {
+	headerDesktopFixed,
 	headerDisplay,
+	headerMobileFixed,
 	headerWidthFluid,
 	layout,
 	themeMode,
-	headerDesktopFixed,
-	headerMobileFixed,
-} from '@/layouts/default-layout/config/helper'
+} from '@/layouts/default-layout/config/helper';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'LayoutHeader',
@@ -70,3 +70,9 @@ export default defineComponent({
 	},
 })
 </script>
+
+<style scoped>
+.bg-color {
+	background-color: red
+}
+</style>

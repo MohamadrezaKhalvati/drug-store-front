@@ -10,11 +10,11 @@
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
-					<a href="#" class="btn btn-sm btn-light-primary me-2" data-bs-toggle="modal"
+					<a href="#" class="btn bt-blue-light me-3" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Filter
 					</a>
-					<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+					<a href="#" class="btn bt-blue-dark me-3" data-bs-toggle="modal"
 						data-bs-target="#kt_modal_invite_friends">
 						Add Staff
 					</a>
@@ -69,7 +69,7 @@
 									<router-link :to="`/staff/staff-details`" class="menu-link px-3">
 										<td>
 											<div class="d-flex align-items-center">
-												<div class="symbol symbol-45px me-5">
+												<div class="symbol symbol-circle symbol-45px me-5">
 													<img :src="item.image" alt="">
 												</div>
 												<div class="d-flex justify-content-start flex-column">
@@ -114,7 +114,7 @@
 
 
 									<td>
-										<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
+										<a href="#" class="btn btn-sm  bt-blue-light" data-bs-toggle="modal"
 											data-bs-target="#kt_modal_invite_friends">
 											Action
 											<KTIcon icon-name="down" icon-class="fs-3" />

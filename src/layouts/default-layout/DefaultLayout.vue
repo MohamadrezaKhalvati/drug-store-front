@@ -1,5 +1,5 @@
 <template>
-	<div id="kt_app_root" class="d-flex flex-column flex-root app-root">
+	<div id="kt_app_root" class="d-flex flex-column flex-root app-root bg-color">
 		<div id="kt_app_page" class="app-page flex-column flex-column-fluid">
 			<KTHeader />
 			<div id="kt_app_wrapper" class="app-wrapper flex-column flex-row-fluid">
@@ -21,6 +21,15 @@
 </template>
 
 <script lang="ts">
+import { reinitializeComponents } from '@/core/plugins/keenthemes'
+import LayoutService from '@/core/services/LayoutService'
+import KTContent from '@/layouts/default-layout/components/content/Content.vue'
+import KTDrawers from '@/layouts/default-layout/components/drawers/Drawers.vue'
+import KTCustomize from '@/layouts/default-layout/components/extras/Customize.vue'
+import KTHeader from '@/layouts/default-layout/components/header/Header.vue'
+import KTModals from '@/layouts/default-layout/components/modals/Modals.vue'
+import KTSidebar from '@/layouts/default-layout/components/sidebar/Sidebar.vue'
+import KTToolbar from '@/layouts/default-layout/components/toolbar/Toolbar.vue'
 import {
 	defineComponent,
 	nextTick,
@@ -28,16 +37,7 @@ import {
 	onMounted,
 	watch,
 } from 'vue'
-import KTHeader from '@/layouts/default-layout/components/header/Header.vue'
-import KTSidebar from '@/layouts/default-layout/components/sidebar/Sidebar.vue'
-import KTContent from '@/layouts/default-layout/components/content/Content.vue'
-import KTToolbar from '@/layouts/default-layout/components/toolbar/Toolbar.vue'
-import KTDrawers from '@/layouts/default-layout/components/drawers/Drawers.vue'
-import KTModals from '@/layouts/default-layout/components/modals/Modals.vue'
-import KTCustomize from '@/layouts/default-layout/components/extras/Customize.vue'
 import { useRoute } from 'vue-router'
-import { reinitializeComponents } from '@/core/plugins/keenthemes'
-import LayoutService from '@/core/services/LayoutService'
 
 export default defineComponent({
 	name: 'DefaultLayout',
@@ -74,3 +74,10 @@ export default defineComponent({
 	},
 })
 </script>
+
+
+<style scoped>
+.bg-color {
+	background-color: #EBEBEB
+}
+</style>

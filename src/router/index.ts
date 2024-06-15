@@ -20,11 +20,11 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: '/staff',
-        name: 'staff',
+        name: 'Staff',
         component: () => import('@/views/staff/Staff.vue'),
         meta: {
-          pageTitle: 'staff',
-          breadcrumbs: ['staff'],
+          pageTitle: 'Staff',
+          breadcrumbs: ['Staff'],
         },
       },
       {
@@ -57,10 +57,19 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/Product',
         name: 'Product',
-        component: () => import('@/views/Product.vue'),
+        component: () => import('@/views/product/Product.vue'),
         meta: {
           pageTitle: 'Product',
           breadcrumbs: ['Product'],
+        },
+      },
+      {
+        path: '/product/add',
+        name: 'AddProduct',
+        component: () => import('@/views/product/AddProduct.vue'),
+        meta: {
+          pageTitle: 'Add Product',
+          breadcrumbs: ['Products', 'Add Product'],
         },
       },
       {

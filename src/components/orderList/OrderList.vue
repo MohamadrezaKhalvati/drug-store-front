@@ -72,7 +72,7 @@
 									<td>
 										<div class="d-flex align-items-center justify-content-center">
 											<div class="d-flex justify-content-start flex-row">
-												<div class="symbol symbol-45px me-5">
+												<div class="symbol symbol-45px me-5 symbol-circle">
 													<img :src="item.image" alt="">
 												</div>
 												<a href="#"
@@ -104,7 +104,7 @@
 									</td>
 									<td>
 										<div class="d-flex justify-content-center">
-											<a href="#" class="btn btn-sm btn-light-primary " data-bs-toggle="modal"
+											<a href="#" class="btn btn-sm bt-blue-light" data-bs-toggle="modal"
 												data-bs-target="#kt_modal_invite_friends ">
 												Action
 												<KTIcon icon-name="down" icon-class="fs-3" />
