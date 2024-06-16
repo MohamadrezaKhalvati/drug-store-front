@@ -55,7 +55,7 @@
 
 				<div class="modal-footer flex-center ">
 
-					<router-link :to="`#`">
+					<router-link to="/order-detail">
 						<span class="btn btn-lg bt-blue-dark px-10 indicator-label">
 							View More
 						</span>
