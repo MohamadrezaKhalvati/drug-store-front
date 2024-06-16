@@ -25,8 +25,8 @@
 								<label class="fs-6 fw-semibold mb-2 required">CurrentPassword</label>
 								<div class="d-flex align-items-center position-relative my-1">
 									<input v-model="formData.currentPassword" type="text"
-										class=" form-control form-control-solid w-100"
-										:placeholder="formData.currentPassword">
+										class=" form-control form-control-solid w-100 bg-input"
+										:placeholder="'123456789'">
 								</div>
 							</div>
 
@@ -36,8 +36,8 @@
 								<label class="fs-6 fw-semibold mb-2 required">New Password</label>
 								<div class="d-flex align-items-center position-relative my-1">
 									<input v-model="formData.newPassword" type="password"
-										class=" form-control form-control-solid w-100"
-										:placeholder="formData.newPassword">
+										class=" form-control form-control-solid w-100 bg-input"
+										:placeholder="'123456789'">
 								</div>
 								<span class="text-muted fs-7 mt-1">
 									Use 8 or more characters with a mix of letters, numbers & symbols.
@@ -48,7 +48,7 @@
 								<label class="fs-6 fw-semibold mb-2 required">Confirm New Password</label>
 								<div class="d-flex align-items-center position-relative my-1">
 									<input v-model="formData.confirmNewPassword" type="password"
-										class=" form-control form-control-solid w-100"
+										class=" form-control form-control-solid w-100 bg-input"
 										:placeholder="formData.confirmNewPassword">
 								</div>
 							</div>
@@ -94,7 +94,7 @@ export default defineComponent({
 		const formData = ref({
 			currentPassword: '',
 			newPassword: '123456789',
-			confirmNewPassword: ''
+			confirmNewPassword: '123456789'
 		})
 
 		const rules = ref({

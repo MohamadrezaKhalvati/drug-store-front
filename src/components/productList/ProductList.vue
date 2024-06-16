@@ -5,8 +5,9 @@
 				<div class="card-title">
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
-						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Product" @input="searchItems()">
+						<input v-model="search" type="text"
+							class="form-control form-control-solid w-250px ps-15 bg-input" placeholder="Search Product"
+							@input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
@@ -123,12 +124,21 @@
 											{{ item.Status }}</a>
 									</td>
 									<td>
-										<div class="d-flex justify-content-center">
-											<a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal"
-												data-bs-target="#kt_modal_invite_friends ">
-												Action
-												<KTIcon icon-name="down" icon-class="fs-3" />
-											</a>
+										<a href="#" class="btn btn-sm  bt-blue-light" data-kt-menu-trigger="click"
+											data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+											Action
+											<KTIcon icon-name="down" icon-class="fs-3" />
+										</a>
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
+											data-kt-menu="true">
+											<div class="menu-item px-3">
+												<router-link to="" class="menu-link px-3">
+													Edit
+												</router-link>
+											</div>
+											<div class="menu-item px-3">
+												<a class="menu-link px-3">Delete</a>
+											</div>
 										</div>
 									</td>
 								</tr>

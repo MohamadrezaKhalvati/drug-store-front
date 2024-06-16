@@ -230,8 +230,9 @@
 
 			<div class="row mb-7 col-lg-12">
 				<div class="d-flex flex-row">
-					<label class="col-lg-4 fw-bold fs-5"> Can Customer Return This Product ?
-					</label>
+					<h2 class="fw-bold">
+						Role
+					</h2>
 					<div class="form-check  form-check-sm form-check-solid me-5">
 						<input v-model="formData.returnable" class="form-check-input" type="radio" :value="true">
 						<label class="form-check-label">

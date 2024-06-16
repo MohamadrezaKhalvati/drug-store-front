@@ -21,9 +21,9 @@
 					<span class="fw-bold fs-6 text-gray-900">Administrator</span>
 				</div>
 				<div class="col-lg-2 row">
-					<button class="btn bt-blue-light fs-6 ">
+					<a class="btn bt-blue-light fs-6 px-6" data-bs-toggle="modal" data-bs-target="#change-role-modal">
 						Change Role
-					</button>
+					</a>
 				</div>
 
 			</div>
@@ -271,18 +271,19 @@
 
 	<ChangeEmail />
 	<ChangePasswordModal />
-
+	<ChangeRoleModal />
 </template>
 
 <script>
-import ChangeEmail from '@/components/modals/forms/ChangeEmail.vue';
-import { defineComponent, ref } from 'vue';
-import ChangePasswordModal from '../modals/forms/ChangePasswordModal.vue';
-import PersonalInformation from '../personalInformation/PersonalInformation.vue';
+import ChangeEmail from '@/components/modals/forms/ChangeEmail.vue'
+import ChangeRoleModal from '@/components/modals/forms/ChangeRole.vue'
+import { defineComponent, ref } from 'vue'
+import ChangePasswordModal from '../modals/forms/ChangePasswordModal.vue'
+import PersonalInformation from '../personalInformation/PersonalInformation.vue'
 export default defineComponent({
 	name: 'ProfileDetail',
 	components: {
-		PersonalInformation, ChangeEmail, ChangePasswordModal
+		PersonalInformation, ChangeEmail, ChangePasswordModal, ChangeRoleModal
 	},
 	setup() {
 		const emailFormDisplay = ref(false)

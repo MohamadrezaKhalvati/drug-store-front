@@ -5,8 +5,9 @@
 				<div class="card-title">
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
-						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Staff" @input="searchItems()">
+						<input v-model="search" type="text"
+							class="form-control form-control-solid w-250px ps-15 bg-input" placeholder="Search Staff"
+							@input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
@@ -84,55 +85,50 @@
 										</td>
 									</router-link>
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.email }}</a>
+										<span href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
+											item.email }}</span>
 									</td>
 
 									<td class="text-end">
 										<div class="d-flex flex-column w-100 me-2">
 											<div class="d-flex flex-stack mb-2">
-												<span class=" me-2 fs-7 fw-semibold">
+												<span class=" me-2 fs-7 fw-bold text-gray-900">
 													{{ item.role }}
 												</span>
 											</div>
-
-
 										</div>
 									</td>
 
 									<td>
-										<a href="#"
+										<span
 											class="text-gray-900 fw-bold text-hover-primary d-block fs-6 bg-light w-fit">{{
-												item.lastLogin }}</a>
+												item.lastLogin }}</span>
+									</td>
+									<td>
+										<span class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
+											item.dateJoined }}</span>
 									</td>
 
 
 									<td>
-										<a href="#" class="text-gray-900 fw-bold text-hover-primary d-block fs-6">{{
-											item.dateJoined }}</a>
-									</td>
-
-
-									<td>
-										<a href="#" class="btn btn-sm  bt-blue-light" data-bs-toggle="modal"
-											data-bs-target="#kt_modal_invite_friends">
+										<a href="#" class="btn btn-sm  bt-blue-light" data-kt-menu-trigger="click"
+											data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
 											Action
 											<KTIcon icon-name="down" icon-class="fs-3" />
 										</a>
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
+											data-kt-menu="true">
+											<div class="menu-item px-3">
+												<router-link to="" class="menu-link px-3">
+													Edit
+												</router-link>
+											</div>
+											<div class="menu-item px-3">
+												<a class="menu-link px-3">Delete</a>
+											</div>
+										</div>
 									</td>
-									<!-- <td class="text-end">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="switch" icon-class="fs-3" />
-									</a>
 
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-										<KTIcon icon-name="pencil" icon-class="fs-3" />
-									</a>
-
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-										<KTIcon icon-name="trash" icon-class="fs-3" />
-									</a>
-								</td> -->
 								</tr>
 							</template>
 						</tbody>

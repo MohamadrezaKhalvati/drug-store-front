@@ -30,11 +30,27 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/staff/staff-details',
         name: 'staff-details',
-        component: () => import('@/views/staff/StaffProfile.vue'),
-        meta: {
-          pageTitle: 'staff Details',
-          breadcrumbs: ['staff', 'detail'],
-        },
+        redirect: '/staff/overview',
+        children: [
+          {
+            name: 'staff-overview',
+            path: '/staff/overview',
+            component: () => import('@/views/staff/StaffProfile.vue'),
+            meta: {
+              pageTitle: 'Staff Overview',
+              breadcrumbs: ['staff', 'overview'],
+            },
+          },
+          {
+            name: 'staff-edit',
+            path: '/staff/edit',
+            component: () => import('@/views/staff/EditProfile.vue'),
+            meta: {
+              pageTitle: 'Staff Edit',
+              breadcrumbs: ['Staff', 'Edit'],
+            },
+          },
+        ],
       },
       {
         path: '/Customer',
@@ -515,32 +531,32 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
-  {
-    path: '/',
-    component: () => import('@/layouts/SystemLayout.vue'),
-    children: [
-      {
-        path: '/404',
-        name: '404',
-        component: () => import('@/views/crafted/authentication/Error404.vue'),
-        meta: {
-          pageTitle: 'Error 404',
-        },
-      },
-      {
-        path: '/500',
-        name: '500',
-        component: () => import('@/views/crafted/authentication/Error500.vue'),
-        meta: {
-          pageTitle: 'Error 500',
-        },
-      },
-    ],
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404',
-  },
+  //   {
+  //     path: '/',
+  //     component: () => import('@/layouts/SystemLayout.vue'),
+  //     children: [
+  //       {
+  //         path: '/404',
+  //         name: '404',
+  //         component: () => import('@/views/crafted/authentication/Error404.vue'),
+  //         meta: {
+  //           pageTitle: 'Error 404',
+  //         },
+  //       },
+  //       {
+  //         path: '/500',
+  //         name: '500',
+  //         component: () => import('@/views/crafted/authentication/Error500.vue'),
+  //         meta: {
+  //           pageTitle: 'Error 500',
+  //         },
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     path: '/:pathMatch(.*)*',
+  //     redirect: '/404',
+  //   },
 ]
 
 const router = createRouter({

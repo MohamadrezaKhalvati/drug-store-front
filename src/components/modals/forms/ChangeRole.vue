@@ -1,10 +1,10 @@
 <template>
-	<div id="change-email-modal" ref="changeEmailModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div id="change-role-modal" ref="changeRoleModal" class="modal modal-sm fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered mw-400px">
 			<div class="modal-content">
 				<div id="kt_modal_add_customer_header" class="modal-header justify-content-between">
 					<h2 class="fw-bold">
-						Change Email
+						Change Role
 					</h2>
 					<div id="kt_modal_add_customer_close" data-bs-dismiss="modal"
 						class="btn btn-icon btn-sm btn-active-icon-primary">
@@ -14,25 +14,34 @@
 
 				<el-form ref="formRef" :model="formData" :rules="rules" @submit.prevent="submit()">
 
-					<div class="modal-body py-10 px-lg-17">
-
-						<div class="scroll-y me-n7 pe-7" data-kt-scroll="true"
-							data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
-							data-kt-scroll-offset="300px">
-
-							<!--  Email -->
-							<div class="fv-row mb-7">
-								<label class="fs-6 fw-semibold mb-2 required">Email</label>
-								<div class="d-flex align-items-center position-relative my-1">
-									<input v-model="formData.email" type="text"
-										class=" form-control form-control-solid w-100 bg-input"
-										:placeholder="formData.email">
+					<div class=" ml-5 row mb-7   mx-10 my-10">
+						<div class="d-flex flex-column">
+							<label class="col-lg-4 fw-bold fs-5 mb-5">Role
+							</label>
+							<div v-for="(role, index) in roleType" :key="index">
+								<div class="form-check  form-check-sm form-check-solid me-5 my-2">
+									<input v-model="formData.role" class="form-check-input" type="radio"
+										:value="role.value">
+									<div class="d-flex flex-column">
+										<span class="form-check-label fw-bold text-dark fs-4">
+											{{ role.label }}
+										</span>
+										<label class="form-check-label">
+											{{ role.description }}
+										</label>
+									</div>
 								</div>
 							</div>
+
 						</div>
+
 					</div>
 
-					<div class="modal-footer flex-end">
+					<div class="modal-footer flex-center ">
+
+						<button id="kt_modal_add_customer_cancel" type="reset" class="btn btn-lg btn-light px-10">
+							Cancel
+						</button>
 
 						<button :data-kt-indicator="loading ? 'on' : null" class="btn btn-lg bt-blue-dark px-10"
 							type="submit">
@@ -59,21 +68,46 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-	name: 'ChangeEmailModal',
+	name: 'ChaneRoleModal',
 	components: {},
 	setup() {
 		const formRef = ref<null | HTMLFormElement>(null)
-		const changeEmailModal = ref<null | HTMLElement>(null)
+		const changeRoleModal = ref<null | HTMLElement>(null)
 		const loading = ref<boolean>(false)
 		const formData = ref({
-			email: 'jane.doe@pharmacy.com'
+			role: ''
 		})
 
+
+		const roleType = [{
+			label: 'Administrator',
+			value: 'Administrator',
+			description: 'Best for business owners and company administrator '
+		},
+		{
+			label: 'Administrator',
+			value: 'Administrator',
+			description: 'Best for business owners and company administrator '
+
+		},
+		{
+			label: 'Administrator',
+			value: 'Administrator',
+			description: 'Best for business owners and company administrator '
+
+		},
+		{
+			label: 'Administrator',
+			value: 'Administrator',
+			description: 'Best for business owners and company administrator '
+
+		}]
+
 		const rules = ref({
-			Email: [
+			email: [
 				{
 					required: true,
-					message: 'Email is required',
+					message: 'email is invalid',
 					trigger: 'change',
 				},
 			],
@@ -102,7 +136,7 @@ export default defineComponent({
 								confirmButton: 'btn btn-primary',
 							},
 						}).then(() => {
-							hideModal(changeEmailModal.value)
+							hideModal(changeRoleModal.value)
 						})
 					}, 2000)
 				} else {
@@ -127,9 +161,9 @@ export default defineComponent({
 			submit,
 			formRef,
 			loading,
-			changeEmailModal,
+			changeRoleModal,
 			getAssetPath,
-			countries,
+			countries, roleType
 		}
 	},
 })

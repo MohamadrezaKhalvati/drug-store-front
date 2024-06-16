@@ -6,7 +6,8 @@
 					Personal Information
 				</h3>
 			</div>
-			<router-link to="/account/settings" class="btn bt-blue-dark align-self-center fs-6">
+
+			<router-link to="/staff/edit" class="btn bt-blue-dark align-self-center fs-6">
 				Edit Profile
 			</router-link>
 		</div>

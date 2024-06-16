@@ -5,8 +5,9 @@
 				<div class="card-title">
 					<div class="d-flex align-items-center position-relative my-1">
 						<KTIcon icon-name="magnifier" icon-class="fs-1 position-absolute ms-6" />
-						<input v-model="search" type="text" class="form-control form-control-solid w-250px ps-15"
-							placeholder="Search Order" @input="searchItems()">
+						<input v-model="search" type="text"
+							class="form-control form-control-solid w-250px ps-15 bg-input" placeholder="Search Order"
+							@input="searchItems()">
 					</div>
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
@@ -24,7 +25,7 @@
 				<div class="table-responsive">
 					<table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
 						<thead>
-							<tr class=" text-muted">
+							<tr>
 								<th class="w-25px">
 									<div class="form-check form-check-sm form-check-custom form-check-solid">
 										<input class="form-check-input" type="checkbox" @change="
@@ -40,7 +41,7 @@
 								<th class="min-w-100px text-center">
 									Customer
 								</th>
-								<th class="min-w-100px">
+								<th class="min-w-100px text-center">
 									Status
 								</th>
 								<th class="min-w-100px">
@@ -66,7 +67,8 @@
 									</td>
 
 									<td>
-										<span class=" fw-semibold text-muted d-block fs-7">{{ item.id
+										<span data-bs-toggle="modal" data-bs-target="#Order-Detail-modal"
+											class=" fw-semibold text-hover-primary d-block fs-7">{{ item.id
 											}}</span>
 									</td>
 									<td>
@@ -75,22 +77,22 @@
 												<div class="symbol symbol-45px me-5 symbol-circle">
 													<img :src="item.image" alt="">
 												</div>
-												<a href="#"
+												<span
 													class=" d-flex align-items-center text-gray-900  text-hover-primary fs-6">{{
-														item.customer }}</a>
+														item.customer }}</span>
 
 											</div>
 										</div>
 									</td>
 									<td>
-										<a href="#" class="text-gray-900  text-hover-primary d-block fs-6">
+										<span class="text-gray-900 fs-7 d-block  badge badge-success mx-10">
 											{{ item.status }}
-										</a>
+										</span>
 									</td>
 									<td class="text-end">
 										<div class="d-flex flex-column w-100 me-2">
 											<div class="d-flex flex-stack mb-2">
-												<span class=" me-2 fs-7   text-muted">
+												<span class=" me-2 fs-7   text-gray-900">
 													${{ item.totalPrice }}
 												</span>
 											</div>
@@ -98,17 +100,26 @@
 									</td>
 
 									<td>
-										<span class="text-gray-900 text-muted   text-hover-primary d-block
+										<span class="text-gray-900  d-block
 											 fs-6">{{
 												item.dateJoined }}</span>
 									</td>
 									<td>
-										<div class="d-flex justify-content-center">
-											<a href="#" class="btn btn-sm bt-blue-light" data-bs-toggle="modal"
-												data-bs-target="#kt_modal_invite_friends ">
-												Action
-												<KTIcon icon-name="down" icon-class="fs-3" />
-											</a>
+										<a href="#" class="btn btn-sm  bt-blue-light" data-kt-menu-trigger="click"
+											data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+											Action
+											<KTIcon icon-name="down" icon-class="fs-3" />
+										</a>
+										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
+											data-kt-menu="true">
+											<div class="menu-item px-3">
+												<router-link to="" class="menu-link px-3">
+													Edit
+												</router-link>
+											</div>
+											<div class="menu-item px-3">
+												<a class="menu-link px-3">Delete</a>
+											</div>
 										</div>
 									</td>
 								</tr>
@@ -119,15 +130,16 @@
 			</div>
 		</div>
 	</div>
+	<OrderDetailModal />
 </template>
 
 <script lang="ts">
+import OrderDetailModal from '@/components/modals/forms/OrderDetail.vue';
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
-
 export default defineComponent({
 	name: 'OrderList',
-	components: {},
+	components: { OrderDetailModal },
 	props: {
 		widgetClasses: {
 			type: String, required: false, default: ''
