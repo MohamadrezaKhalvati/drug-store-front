@@ -1,5 +1,5 @@
 <template>
-	<div id="Order-Detail-modal" ref="changeEmailModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div id="Order-Detail-modal" ref="orderdDetailModal" class="modal fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered mw-450px">
 			<div class="modal-content">
 				<div id="kt_modal_add_customer_header" class="modal-header justify-content-between">
@@ -55,7 +55,7 @@
 
 				<div class="modal-footer flex-center ">
 
-					<router-link to="/order-detail">
+					<router-link to="/order-detail" @click="hideModalFun">
 						<span class="btn btn-lg bt-blue-dark px-10 indicator-label">
 							View More
 						</span>
@@ -70,13 +70,23 @@
 
 <script lang="ts">
 import { getAssetPath } from '@/core/helpers/assets';
-import { defineComponent } from 'vue';
+import { hideModal } from '@/core/helpers/modal';
+import { defineComponent, ref } from 'vue';
 export default defineComponent({
 	name: 'OrderDetailModal',
 	components: {},
 	setup() {
+
+		const orderdDetailModal = ref<null | HTMLElement>(null)
+
+		function hideModalFun() {
+			hideModal(orderdDetailModal.value)
+
+		}
 		return {
-			getAssetPath
+			getAssetPath,
+			orderdDetailModal,
+			hideModalFun
 		}
 	}
 })

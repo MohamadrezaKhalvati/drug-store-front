@@ -84,10 +84,12 @@
 		</div>
 		<div class="col-xl-6">
 			<KTListWidget1 widget-classes="card-xxl-stretch mb-5 mb-xl-10'" />
+
 		</div>
 	</div>
 	<div class="row gy-10 gx-xl-10">
 		<div class="col-xl-6">
+
 			<KTListWidget5 widget-classes="card-xxl-stretch mb-5 mb-xl-10" />
 		</div>
 		<div class="col-xl-6">
