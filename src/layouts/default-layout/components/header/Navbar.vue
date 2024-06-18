@@ -1,11 +1,14 @@
 <template>
 	<div class="app-navbar flex-shrink-0 ">
 
+
+
 		<div class="app-navbar-item ms-1 ms-md-4">
-			<div id="kt_activities_toggle"
-				class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px">
+			<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
+				data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 				<KTIcon icon-name="messages" icon-class="fs-2" />
 			</div>
+			<KTNotificationMenu />
 		</div>
 
 		<div class="app-navbar-item ms-1 ms-md-3">
@@ -36,6 +39,7 @@
 <script lang="ts">
 import { ThemeModeComponent } from '@/assets/ts/layout'
 import { getAssetPath } from '@/core/helpers/assets'
+import KTNotificationMenu from '@/layouts/default-layout/components/menus/NotificationsMenu.vue'
 import KTThemeModeSwitcher from '@/layouts/default-layout/components/theme-mode/ThemeModeSwitcher.vue'
 import { useThemeStore } from '@/stores/theme'
 import { computed, defineComponent } from 'vue'
@@ -43,7 +47,7 @@ import { computed, defineComponent } from 'vue'
 export default defineComponent({
 	name: 'HeaderNavbar',
 	components: {
-		KTThemeModeSwitcher,
+		KTThemeModeSwitcher, KTNotificationMenu
 	},
 	setup() {
 		const store = useThemeStore()
