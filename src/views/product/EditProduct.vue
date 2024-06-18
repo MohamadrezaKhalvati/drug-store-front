@@ -18,7 +18,7 @@
 					<label class="col-lg-4 fw-semibold  text-muted fs-7">Enter Your Product Name Here</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.productName" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.productName" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'Radiant Glow Revitalizing Serum'">
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 						product</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.productCategory" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.productCategory" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'Skin Care Products'">
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 					<label class="col-lg-4 fw-semibold  text-muted fs-7">Set the product thumbnail image</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.Thumbnail" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.Thumbnail" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'Radiant Glow Revitalizing Serum'">
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 						resolution should be 1920 x 1080 and dont use transparent image!</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.sliderImages" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.sliderImages" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'Radiant Glow Revitalizing Serum'">
 				</div>
 			</div>
@@ -150,7 +150,7 @@
 					<label class="col-lg-4 fw-semibold  text-muted fs-7">Enter the product price in USD</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.productName" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.price" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'10.00'">
 
 
@@ -186,7 +186,7 @@
 							tracking</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.skuCode" type="text" class="form-control form-control-solid w-100"
+						<input v-model="formData.skuCode" type="text" class="form-control form-control-solid w-100"
 							:placeholder="'PROD123456'">
 					</div>
 				</div>
@@ -197,7 +197,7 @@
 							barcode</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.bacode" type="text" class="form-control form-control-solid w-100"
+						<input v-model="formData.bacode" type="text" class="form-control form-control-solid w-100"
 							:placeholder="'1234567890123'">
 					</div>
 				</div>
@@ -208,7 +208,7 @@
 							product</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.quantity" type="text" class="form-control form-control-solid w-100"
+						<input v-model="formData.quantity" type="text" class="form-control form-control-solid w-100"
 							:placeholder="'50'">
 					</div>
 				</div>
@@ -223,27 +223,29 @@
 						product</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-3">
-					<input :v-model="formData.supplier" type="text" class="form-control form-control-solid w-100"
+					<input v-model="formData.supplier" type="text" class="form-control form-control-solid w-100"
 						:placeholder="'ABC Distributors'">
 				</div>
 			</div>
 
 			<div class="row mb-7 col-lg-12">
-				<div class="d-flex flex-row">
-					<h2 class="fw-bold">
-						Role
+				<div class="d-flex flex-row w-50 justify-content-between">
+					<h2 class="fw-bold fs-5">
+						Can Customer Return This Product ?
 					</h2>
-					<div class="form-check  form-check-sm form-check-solid me-5">
-						<input v-model="formData.returnable" class="form-check-input" type="radio" :value="true">
-						<label class="form-check-label">
-							YES
-						</label>
-					</div>
-					<div class="form-check  form-check-sm form-check-solid me-5">
-						<input v-model="formData.returnable" class="form-check-input" type="radio" :value="false">
-						<label class="form-check-label">
-							No
-						</label>
+					<div class="d-flex flex-row mt-1">
+						<div class="form-check  form-check-sm form-check-solid me-5">
+							<input v-model="formData.returnable" class="form-check-input" type="radio" :value="true">
+							<label class="form-check-label">
+								YES
+							</label>
+						</div>
+						<div class="form-check  form-check-sm form-check-solid me-5">
+							<input v-model="formData.returnable" class="form-check-input" type="radio" :value="false">
+							<label class="form-check-label">
+								No
+							</label>
+						</div>
 					</div>
 				</div>
 
@@ -285,7 +287,7 @@
 							medication</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.dosage" type="text" class="form-control form-control-solid w-100"
+						<input v-model="formData.dosage" type="text" class="form-control form-control-solid w-100"
 							:placeholder="'10'">
 					</div>
 				</div>
@@ -297,8 +299,8 @@
 							medication</label>
 					</div>
 					<div class="form-floating ">
-						<select id="floatingSelect1" class="form-select form-select-solid"
-							aria-label="Floating label select example" :v-model="formData.dosageForm">
+						<select id="floatingSelect1" v-model="formData.dosageForm" class="form-select form-select-solid"
+							aria-label="Floating label select example">
 							<option selected>
 								Capsule
 							</option>
@@ -322,7 +324,7 @@
 							product</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.expirationDate" type="date"
+						<input v-model="formData.expirationDate" type="date"
 							class="form-control form-control-solid w-100" :placeholder="'DD/MM/YYYY'">
 					</div>
 				</div>
@@ -345,20 +347,22 @@
 
 
 			<div class="row mb-7 col-lg-12">
-				<div class="d-flex flex-row">
+				<div class="d-flex flex-row w-100">
 					<label class="col-lg-4 fw-bold fs-5"> Do Customer Need Prescription for this Product ?
 					</label>
-					<div class="form-check  form-check-sm form-check-solid me-5">
-						<input v-model="formData.Prescription" class="form-check-input" type="radio" :value="true">
-						<label class="form-check-label">
-							YES
-						</label>
-					</div>
-					<div class="form-check  form-check-sm form-check-solid me-5">
-						<input v-model="formData.returnable" class="form-check-input" type="radio" :value="false">
-						<label class="form-check-label">
-							No
-						</label>
+					<div class="d-flex flex-row">
+						<div class="form-check  form-check-sm form-check-solid me-5 mx-10 mt-1">
+							<input v-model="formData.Prescription" class="form-check-input" type="radio" :value="true">
+							<label class="form-check-label">
+								YES
+							</label>
+						</div>
+						<div class="form-check  form-check-sm form-check-solid me-5">
+							<input v-model="formData.returnable" class="form-check-input" type="radio" :value="false">
+							<label class="form-check-label">
+								No
+							</label>
+						</div>
 					</div>
 				</div>
 
@@ -399,7 +403,7 @@
 							product</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.status" type="text" class="form-control form-control-solid w-100"
+						<input v-model="formData.status" type="text" class="form-control form-control-solid w-100"
 							:placeholder="'Published'">
 					</div>
 				</div>
@@ -411,7 +415,7 @@
 							to published</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.publishedDate" type="date"
+						<input v-model="formData.publishedDate" type="date"
 							class="form-control form-control-solid w-100" :placeholder="'DD/MM/YYYY'">
 					</div>
 				</div>
@@ -423,7 +427,7 @@
 							to published</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-3">
-						<input :v-model="formData.publishedTime" type="time"
+						<input v-model="formData.publishedTime" type="time"
 							class="form-control form-control-solid w-100" :placeholder="'00:00'">
 					</div>
 				</div>
@@ -447,43 +451,44 @@
 		</button>
 
 	</div>
-
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, watch } from 'vue';
+
 export default defineComponent({
-	name: 'AddProduct',
+	name: 'EditProduct',
+	component: {},
 	setup() {
-
-
 		const discountAmount = ['0', '5', '10', '15', '20', '25', '30', '35', '40 ', '45', '50', '60', '70', '80', '90', '99']
 
 		const formData = ref({
-			productName: '',
-			productCategory: '',
+			productName: 'Radiant Glow Revitalizing Serum',
+			productCategory: 'Skin Care Products',
 			Thumbnail: '',
 			sliderImages: '',
-			description: '',
-			price: '',
-			discount: '',
-			skuCode: '',
-			bacode: '',
-			quantity: '',
-			supplier: '',
-			dosage: '',
-			dosageForm: '',
+			description: 'Lorem ipsum dolor sit amet consectetur. Sit quam vitae rhoncus dignissim cursus bibendum elementum platea. Aliquam nunc tellus sit lacus. Integer bibendum lacinia urna quam massa orci mattis nascetur ultrices. Eu purus adipiscing nam in purus quam et. At massa cursus aliquam vel. Lacus habitasse in risus non tincidunt fusce malesuada. Gravida lectus proin scelerisque ullamcorper leo orci tellus lorem amet. Nibh mattis nunc viverra phasellus. Massa ridiculus netus netus at in faucibus sit. Quam pharetra commodo libero amet eget donec sed mattis.',
+			price: '10.00',
+			discount: '0',
+			skuCode: 'PROD123456',
+			bacode: '1234567890123',
+			quantity: '50',
+			supplier: 'ABC Distributors',
+			dosage: '10',
+			dosageForm: 'Capsule',
 			expirationDate: '',
-			usageInstructions: '',
-			returnable: false,
-			Prescription: false,
-			status: '',
-			publishedDate: '',
-			publishedTime: ''
+			usageInstructions: 'Lorem ipsum dolor sit amet consectetur. Sit quam vitae rhoncus dignissim cursus bibendum elementum platea. Aliquam nunc tellus sit lacus. Integer bibendum lacinia urna quam massa orci mattis nascetur ultrices. Eu purus adipiscing nam in purus quam et. ',
+			returnable: true,
+			Prescription: true,
+			status: 'Published',
+			publishedDate: 'DD/MM/YYYY',
+			publishedTime: '00:00'
 
 		})
 
-
+		watch(() => formData.value.productName, () => {
+			console.log(formData.value.productName)
+		})
 
 		return {
 			formData,

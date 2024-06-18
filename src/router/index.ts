@@ -89,6 +89,15 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: '/product/edit',
+        name: 'EditProduct',
+        component: () => import('@/views/product/EditProduct.vue'),
+        meta: {
+          pageTitle: 'Edit Product',
+          breadcrumbs: ['Product', 'Edit Product'],
+        },
+      },
+      {
         path: '/Order',
         name: 'Order',
         component: () => import('@/views/order/Order.vue'),
