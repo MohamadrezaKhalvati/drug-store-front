@@ -107,6 +107,25 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: 'order/add',
+        name: 'AddOrder',
+        component: () => import('@/views/order/AddOrder.vue'),
+        meta: {
+          pageTitle: 'Add Order',
+          breadcrumbs: ['Order', 'Add Order'],
+        },
+      },
+
+      {
+        path: '/order/edit',
+        name: 'EditOrder',
+        component: () => import('@/views/order/EditOrder.vue'),
+        meta: {
+          pageTitle: 'Edit Order',
+          breadcrumbs: ['Order', 'Edit Order'],
+        },
+      },
+      {
         path: '/order-detail',
         name: 'orderDetail',
         component: () => import('@/views/order/OrderDetail.vue'),

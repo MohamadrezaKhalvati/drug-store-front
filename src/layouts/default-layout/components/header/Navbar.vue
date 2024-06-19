@@ -1,8 +1,5 @@
 <template>
 	<div class="app-navbar flex-shrink-0 ">
-
-
-
 		<div class="app-navbar-item ms-1 ms-md-4">
 			<div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
 				data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">

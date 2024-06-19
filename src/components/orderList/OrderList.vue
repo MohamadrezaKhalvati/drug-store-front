@@ -15,12 +15,12 @@
 						data-bs-target="#Order-Filter-Modal">
 						Filter
 					</a>
-					<a href="#" class="btn   bt-blue-dark " data-bs-toggle="modal" data-bs-target="#">
-						Add Order
-					</a>
+					<router-link :to="'/order/add'" class="menu-link px-3">
+						<span class="btn bt-blue-dark">
+							Add Order
+						</span>
+					</router-link>
 				</div>
-
-
 			</div>
 			<div class="card-body py-3">
 				<div class="table-responsive">

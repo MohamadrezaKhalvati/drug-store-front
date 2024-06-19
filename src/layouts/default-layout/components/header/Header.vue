@@ -1,5 +1,5 @@
 <template>
-	<div v-if="headerDisplay" id="kt_app_header" class="app-header bg-white" data-kt-sticky="true"
+	<div v-if="headerDisplay" id="kt_app_header" class="app-header bg-white " data-kt-sticky="true"
 		data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize"
 		data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 		<div class="app-container d-flex align-items-stretch justify-content-between" :class="{
@@ -8,7 +8,7 @@
 		}">
 
 			<div v-if="layout === 'light-header' || layout === 'dark-header'"
-				class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
+				class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15 ">
 				<router-link to="/">
 					<img v-if="themeMode === 'light' && layout === 'light-header'" alt="Logo"
 						:src="getAssetPath('media/logos/default.svg')"
@@ -19,6 +19,7 @@
 					" alt="Logo" :src="getAssetPath('media/logos/default-dark.svg')"
 						class="h-20px h-lg-30px app-sidebar-logo-default">
 				</router-link>
+
 			</div>
 			<template v-else>
 				<div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2">

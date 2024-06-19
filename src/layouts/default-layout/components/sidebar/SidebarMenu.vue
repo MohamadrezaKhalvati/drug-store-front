@@ -1,5 +1,5 @@
 <template>
-	<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+	<div class="app-sidebar-menu overflow-hidden  flex-column-fluid">
 		<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
 			data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
 			data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
@@ -11,6 +11,7 @@
 						<div class="menu-content">
 							<span class="menu-heading fw-bold text-uppercase fs-7">
 								{{ translate(item.heading) }}
+
 							</span>
 						</div>
 					</div>
