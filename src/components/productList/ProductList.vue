@@ -12,9 +12,12 @@
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
 					<a href="#" class="btn bt-blue-light me-2" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+						data-bs-target="#Order-Product-Modal">
 						Filter
 					</a>
+
+					<ProductFilterModal></ProductFilterModal>
+
 					<router-link :to="'/product/add'" class="menu-link px-3">
 						<span class="btn bt-blue-dark">
 							Add Product
@@ -154,6 +157,7 @@
 <script lang="ts">
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
+import ProductFilterModal from '../modals/forms/ProductFilterModal.vue';
 
 export default defineComponent({
 	name: 'ProductList',
@@ -162,6 +166,7 @@ export default defineComponent({
 			type: String, required: false, default: ''
 		},
 	},
+	components: { ProductFilterModal },
 	setup() {
 		const checkedRows = ref<Array<number>>([])
 		const list = ref([

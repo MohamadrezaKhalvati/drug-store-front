@@ -18,13 +18,13 @@
 						<div class="d-flex flex-column">
 							<label class="col-lg-4 fw-bold fs-5 mb-5">Status
 							</label>
-							<div v-for="(role, index) in statusType" :key="index">
+							<div v-for="(status, index) in statusType" :key="index">
 								<div class="form-check form-check-sm form-check-solid me-5 my-2">
-									<input v-model="formData.role" class="form-check-input" type="radio"
-										:value="role.value">
+									<input v-model="formData.status" class="form-check-input" type="radio"
+										:value="status.value">
 									<div class="d-flex flex-column">
 										<span class="form-check-label fw-bold text-dark fs-6">
-											{{ role.label }}
+											{{ status.label }}
 										</span>
 									</div>
 								</div>
@@ -44,14 +44,14 @@
 
 								<div class="d-flex flex-row justify-content-between ">
 									<div class="d-flex flex-column ">
-										<label class="fs-6 fw-semibold mb-2 ">Min</label>
+										<label class="fs-8 fw-semibold mb-2 ">Min</label>
 										<input v-model="range[0]" type="text"
 											class=" form-control form-control-solid w-50 bg-input "
 											:placeholder="formData.priceRange.min.toString()">
 									</div>
 
 									<div class="d-flex flex-column  align-items-end">
-										<label class="fs-6 fw-semibold mb-2 w-50 ">Max</label>
+										<label class="fs-8 fw-semibold mb-2 w-50 ">Max</label>
 										<input v-model="range[1]" type="text"
 											class=" form-control form-control-solid  w-50 bg-input "
 											:placeholder="formData.priceRange.max.toString()">
