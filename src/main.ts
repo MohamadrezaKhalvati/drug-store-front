@@ -19,12 +19,14 @@ import ApiService from '@/core/services/ApiService'
 
 import '@/core/plugins/prismjs'
 
+import VueSlider from 'vue-slider-component'
+import 'vue-slider-component/theme/default.css'
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 app.use(ElementPlus)
-
+app.component('VueSlider', VueSlider)
 ApiService.init(app)
 initApexCharts(app)
 initInlineSvg(app)

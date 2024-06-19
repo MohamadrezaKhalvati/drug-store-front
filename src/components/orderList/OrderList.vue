@@ -12,14 +12,15 @@
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
 					<a href="#" class="btn  btn-light-primary me-3" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+						data-bs-target="#Order-Filter-Modal">
 						Filter
 					</a>
-					<a href="#" class="btn   bt-blue-dark " data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+					<a href="#" class="btn   bt-blue-dark " data-bs-toggle="modal" data-bs-target="#">
 						Add Order
 					</a>
 				</div>
+
+
 			</div>
 			<div class="card-body py-3">
 				<div class="table-responsive">
@@ -131,15 +132,18 @@
 		</div>
 	</div>
 	<OrderDetailModal />
+
+	<OrderFIlterModal />
 </template>
 
 <script lang="ts">
 import OrderDetailModal from '@/components/modals/forms/OrderDetail.vue';
+import OrderFIlterModal from '@/components/modals/forms/OrderFIlterModal.vue';
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
 	name: 'OrderList',
-	components: { OrderDetailModal },
+	components: { OrderDetailModal, OrderFIlterModal },
 	props: {
 		widgetClasses: {
 			type: String, required: false, default: ''
