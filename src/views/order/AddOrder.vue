@@ -69,7 +69,7 @@
 						<label class="col-lg-4 fw-semibold  text-muted fs-7 w-100">Enter the customer first name</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-5">
-						<input v-model="searchProduct" type="text"
+						<input v-model="formdata.firstName" type="text"
 							class="form-control form-control-solid w-100  bg-input" placeholder="John">
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 						<label class="col-lg-4 fw-semibold  text-muted fs-7 w-100">Enter the customer last name</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-5">
-						<input v-model="searchProduct" type="text"
+						<input v-model="formdata.lastName" type="text"
 							class="form-control form-control-solid w-100  bg-input" placeholder="Smith">
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 							number</label>
 					</div>
 					<div class="d-flex align-items-center position-relative my-5">
-						<input v-model="searchProduct" type="text"
+						<input v-model="formdata.phoneNumber" type="text"
 							class="form-control form-control-solid w-100  bg-input" placeholder="+555-75356776265">
 					</div>
 				</div>
@@ -105,7 +105,7 @@
 					<label class="col-lg-4 fw-semibold  text-muted fs-7 w-100">Enter the customer Email</label>
 				</div>
 				<div class="d-flex align-items-center position-relative my-5">
-					<input v-model="searchProduct" type="text" class="form-control form-control-solid w-100  bg-input"
+					<input v-model="formdata.email" type="text" class="form-control form-control-solid w-100  bg-input"
 						placeholder="example@example.com">
 				</div>
 			</div>
@@ -151,7 +151,7 @@
 				</div>
 				<div class="d-flex align-items-center position-relative my-5 ">
 					<textarea type="text" :v-model="formdata.address" placeholder="101, Colins Street"
-						class="form-control form-control-solid w-10 min-h-150px" />
+						class="form-control bg-input form-control-solid w-10 min-h-150px" />
 				</div>
 			</div>
 
