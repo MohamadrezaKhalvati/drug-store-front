@@ -7,8 +7,7 @@
 				<slot :name="name" :row="item" />
 			</template>
 		</TableContent>
-		<!-- <TableFooter v-model:itemsPerPage="itemsInTable" :current-page="currentPage" :count="totalItems"
-			:items-per-page-dropdown-enabled="itemsPerPageDropdownEnabled" @page-change="pageChange" /> -->
+
 	</div>
 </template>
 
