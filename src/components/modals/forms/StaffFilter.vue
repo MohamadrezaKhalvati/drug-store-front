@@ -1,10 +1,10 @@
 <template>
-	<div id="change-role-modal" ref="changeRoleModal" class="modal modal-sm fade" tabindex="-1" aria-hidden="true">
+	<div id="Staff-filter-modal" ref="staffFilterModal" class="modal modal-sm fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered mw-400px">
 			<div class="modal-content">
 				<div id="kt_modal_add_customer_header" class="modal-header justify-content-between">
 					<h2 class="fw-bold">
-						Change Role
+						Filters
 					</h2>
 					<div id="kt_modal_add_customer_close" data-bs-dismiss="modal"
 						class="btn btn-icon btn-sm btn-active-icon-primary">
@@ -46,7 +46,7 @@
 						<button :data-kt-indicator="loading ? 'on' : null" class="btn btn-lg bt-blue-dark px-10"
 							type="submit">
 							<span v-if="!loading" class="indicator-label">
-								Change
+								Set Filters
 							</span>
 							<span v-if="loading" class="indicator-progress">
 								Please wait...
@@ -68,11 +68,11 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-	name: 'ChaneRoleModal',
+	name: 'StaffFiler',
 	components: {},
 	setup() {
 		const formRef = ref<null | HTMLFormElement>(null)
-		const changeRoleModal = ref<null | HTMLElement>(null)
+		const staffFilterModal = ref<null | HTMLElement>(null)
 		const loading = ref<boolean>(false)
 		const formData = ref({
 			role: ''
@@ -137,7 +137,7 @@ export default defineComponent({
 								confirmButton: 'btn btn-primary',
 							},
 						}).then(() => {
-							hideModal(changeRoleModal.value)
+							hideModal(staffFilterModal.value)
 						})
 					}, 2000)
 				} else {
@@ -162,7 +162,7 @@ export default defineComponent({
 			submit,
 			formRef,
 			loading,
-			changeRoleModal,
+			staffFilterModal,
 			getAssetPath,
 			countries, roleType
 		}

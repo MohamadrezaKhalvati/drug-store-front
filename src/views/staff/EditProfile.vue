@@ -63,9 +63,9 @@
 				<VForm id="kt_account_profile_details_form" class="form" novalidate
 					:validation-schema="profileDetailsValidator" @submit="saveChanges1()">
 					<div class="card-body border-top p-9">
-						<div class="row mb-6">
+						<div class="row mb-6 ">
 							<label class="col-lg-4 col-form-label fw-semibold fs-6">Avatar</label>
-							<div class="col-lg-8">
+							<div class="col-lg-8 ">
 								<div class="image-input image-input-outline" data-kt-image-input="true" :style="{
 									backgroundImage: `url(${getAssetPath(
 										'/media/avatars/blank.png'
@@ -196,13 +196,10 @@
 							</span>
 						</button>
 					</div>
-					<!--end::Actions-->
+
 				</VForm>
-				<!--end::Form-->
 			</div>
-			<!--end::Content-->
 		</div>
-		<!-- Role and Position -->
 		<div class="card mb-5 mb-xl-10">
 			<div class="card-header cursor-pointer">
 				<div class="card-title m-0">
@@ -249,6 +246,48 @@
 					</h3>
 				</div>
 			</div>
+			<div id="kt_account_signin_method" class="collapse show">
+				<div class="card-body border-top p-9">
+					<div class="d-flex flex-wrap align-items-center mb-8">
+						<div id="kt_signin_email" class="row  w-75">
+							<div class="fs-4 fw-bolder mb-1 col-lg-6 ">
+								Email Address
+							</div>
+							<div class="fs-6 fw-semibold text-gray-600 col-lg-6">
+								example@example.com
+							</div>
+						</div>
+
+
+						<div id="kt_signin_email_button" class="ms-auto">
+							<a class="btn bt-blue-light fs-6 px-6" data-bs-toggle="modal"
+								data-bs-target="#change-email-modal">
+								Change Email
+							</a>
+						</div>
+					</div>
+
+					<div class="d-flex flex-wrap align-items-center mb-8">
+						<div id="kt_signin_password" class="row w-75">
+							<div class="fs-4 fw-bolder mb-1 col-lg-6">
+								Password
+							</div>
+							<div class="fs-6 fw-semibold text-gray-600 col-lg-6">
+								************
+							</div>
+						</div>
+						<div id="kt_signin_password_button" class="ms-auto">
+							<a class="btn bt-blue-light fs-6" data-bs-toggle="modal"
+								data-bs-target="#change-password-modal">
+								Change Password
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
 
 			<div class="fs-4 fw-bolder mb-1 col-lg-12 mx-9">
 				Login Method:

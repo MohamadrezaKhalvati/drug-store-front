@@ -12,11 +12,12 @@
 				</div>
 				<div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
 					<a href="#" class="btn bt-blue-light me-3" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+						data-bs-target="#Staff-filter-modal">
 						Filter
 					</a>
-					<a href="#" class="btn bt-blue-dark me-3" data-bs-toggle="modal"
-						data-bs-target="#kt_modal_invite_friends">
+
+
+					<a href="#" class="btn bt-blue-dark me-3" data-bs-toggle="modal" data-bs-target="#Add-Staff-modal">
 						Add Staff
 					</a>
 				</div>
@@ -119,7 +120,7 @@
 										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
 											data-kt-menu="true">
 											<div class="menu-item px-3">
-												<router-link to="" class="menu-link px-3">
+												<router-link to="/staff/edit" class="menu-link px-3">
 													Edit
 												</router-link>
 											</div>
@@ -137,16 +138,20 @@
 			</div>
 		</div>
 	</div>
+
+	<StaffFilter></StaffFilter>
+	<AddStaff></AddStaff>
 </template>
 
 <script lang="ts">
-// import { MenuComponent } from '@/assets/ts/components';
-// import type { ICustomer } from '@/core/data/customers';
+
+import AddStaff from "@/components/modals/forms/AddStaff.vue";
 import { getAssetPath } from '@/core/helpers/assets';
 import { defineComponent, ref } from 'vue';
+import StaffFilter from '../modals/forms/StaffFilter.vue';
 export default defineComponent({
 	name: 'StaffList',
-	components: {},
+	components: { StaffFilter, AddStaff },
 	props: {
 		widgetClasses: {
 			type: String, required: false, default: ''

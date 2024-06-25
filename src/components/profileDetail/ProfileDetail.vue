@@ -57,61 +57,11 @@
 							Email Address
 						</div>
 						<div class="fs-6 fw-semibold text-gray-600 col-lg-6">
-							support@keenthemes.com
+							example@example.com
 						</div>
 					</div>
 
-					<div id="kt_signin_email_edit" :class="{ 'd-none': !emailFormDisplay }" class="flex-row-fluid">
-						<VForm id="kt_signin_change_email" class="form" novalidate :validation-schema="changeEmail"
-							@submit="updateEmail()">
-							<div class="row mb-6">
-								<div class="col-lg-6 mb-4 mb-lg-0">
-									<div class="fv-row mb-0">
-										<label for="emailaddress" class="form-label fs-6 fw-bold mb-3">Enter New Email
-											Address</label>
-										<Field id="emailaddress" type="email"
-											class="form-control form-control-lg form-control-solid fw-semibold fs-6"
-											placeholder="Email Address" name="emailaddress"
-											value="support@keenthemes.com" />
-										<div class="fv-plugins-message-container">
-											<div class="fv-help-block">
-												<ErrorMessage name="emailaddress" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="fv-row mb-0">
-										<label for="confirmemailpassword" class="form-label fs-6 fw-bold mb-3">Confirm
-											Password</label>
-										<Field id="confirmemailpassword" type="password"
-											class="form-control form-control-lg form-control-solid fw-semibold fs-6"
-											name="confirmemailpassword" />
-										<div class="fv-plugins-message-container">
-											<div class="fv-help-block">
-												<ErrorMessage name="confirmemailpassword" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="d-flex">
-								<button id="kt_signin_submit" ref="updateEmailButton" type="submit"
-									class="btn btn-primary me-2 px-6">
-									<span class="indicator-label"> Update Email </span>
-									<span class="indicator-progress">
-										Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2" />
-									</span>
-								</button>
-								<button id="kt_signin_cancel" type="button"
-									class="btn btn-color-gray-500 btn-active-light-primary px-6"
-									@click="emailFormDisplay = !emailFormDisplay">
-									Cancel
-								</button>
-							</div>
-						</VForm>
-					</div>
+
 					<div id="kt_signin_email_button" :class="{ 'd-none': emailFormDisplay }" class="ms-auto">
 						<a class="btn bt-blue-light fs-6 px-6" data-bs-toggle="modal"
 							data-bs-target="#change-email-modal">
@@ -121,7 +71,7 @@
 				</div>
 
 				<div class="d-flex flex-wrap align-items-center mb-8">
-					<div id="kt_signin_password" class="row w-75" :class="{ 'd-none': passwordFormDisplay }">
+					<div id="kt_signin_password" class="row w-75">
 						<div class="fs-4 fw-bolder mb-1 col-lg-6">
 							Password
 						</div>
@@ -129,82 +79,15 @@
 							************
 						</div>
 					</div>
-					<div id="kt_signin_password_edit" class="flex-row-fluid"
-						:class="{ 'd-none': !passwordFormDisplay }">
-						<div class="fs-6 fw-semibold text-gray-600 mb-4">
-							Password must be at least 8 character and contain symbols
-						</div>
-
-						<VForm id="kt_signin_change_password" class="form" novalidate
-							:validation-schema="changePassword" @submit="updatePassword()">
-							<div class="row mb-6">
-								<div class="col-lg-4">
-									<div class="fv-row mb-0">
-										<label for="currentpassword" class="form-label fs-6 fw-bold mb-3">Current
-											Password</label>
-										<Field id="currentpassword" type="password"
-											class="form-control form-control-lg form-control-solid fw-semibold fs-6"
-											name="currentpassword" />
-										<div class="fv-plugins-message-container">
-											<div class="fv-help-block">
-												<ErrorMessage name="currentpassword" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="fv-row mb-0">
-										<label for="newpassword" class="form-label fs-6 fw-bold mb-3">New
-											Password</label>
-										<Field id="newpassword" type="password"
-											class="form-control form-control-lg form-control-solid fw-semibold fs-6"
-											name="newpassword" />
-										<div class="fv-plugins-message-container">
-											<div class="fv-help-block">
-												<ErrorMessage name="newpassword" />
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="fv-row mb-0">
-										<label for="confirmpassword" class="form-label fs-6 fw-bold mb-3">Confirm New
-											Password</label>
-										<Field id="confirmpassword" type="password"
-											class="form-control form-control-lg form-control-solid fw-semibold fs-6"
-											name="confirmpassword" />
-										<div class="fv-plugins-message-container">
-											<div class="fv-help-block">
-												<ErrorMessage name="confirmpassword" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="d-flex">
-								<button id="kt_password_submit" ref="updatePasswordButton" type="submit"
-									class="btn btn-primary me-2 px-6">
-									<span class="indicator-label"> Update Password </span>
-									<span class="indicator-progress">
-										Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2" />
-									</span>
-								</button>
-								<button id="kt_password_cancel" type="button"
-									class="btn btn-color-gray-500 btn-active-light-primary px-6"
-									@click="passwordFormDisplay = !passwordFormDisplay">
-									Cancel
-								</button>
-							</div>
-						</VForm>
-					</div>
-					<div id="kt_signin_password_button" class="ms-auto" :class="{ 'd-none': passwordFormDisplay }">
+					<div id="kt_signin_password_button" class="ms-auto">
 						<a class="btn bt-blue-light fs-6" data-bs-toggle="modal"
 							data-bs-target="#change-password-modal">
 							Change Password
 						</a>
 					</div>
+
 				</div>
+
 			</div>
 		</div>
 
