@@ -190,14 +190,6 @@ const routes: Array<RouteRecordRaw> = [
           pageTitle: 'Error 404',
         },
       },
-      {
-        path: '/500',
-        name: '500',
-        component: () => import('@/views/crafted/authentication/Error500.vue'),
-        meta: {
-          pageTitle: 'Error 500',
-        },
-      },
     ],
   },
   {

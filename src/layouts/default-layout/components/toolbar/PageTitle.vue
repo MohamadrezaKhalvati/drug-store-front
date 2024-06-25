@@ -34,7 +34,7 @@
 		</template>
 	</div>
 	<div v-else class="align-items-stretch"></div>
-	>
+
 </template>
 
 <script lang="ts">
