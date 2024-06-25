@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<KTDrawers />
-	<KTModals />
+
 	<KTCustomize />
 </template>
 
@@ -24,10 +24,8 @@
 import { reinitializeComponents } from '@/core/plugins/keenthemes'
 import LayoutService from '@/core/services/LayoutService'
 import KTContent from '@/layouts/default-layout/components/content/Content.vue'
-import KTDrawers from '@/layouts/default-layout/components/drawers/Drawers.vue'
 import KTCustomize from '@/layouts/default-layout/components/extras/Customize.vue'
 import KTHeader from '@/layouts/default-layout/components/header/Header.vue'
-import KTModals from '@/layouts/default-layout/components/modals/Modals.vue'
 import KTSidebar from '@/layouts/default-layout/components/sidebar/Sidebar.vue'
 import KTToolbar from '@/layouts/default-layout/components/toolbar/Toolbar.vue'
 import {
@@ -46,8 +44,6 @@ export default defineComponent({
 		KTSidebar,
 		KTContent,
 		KTToolbar,
-		KTDrawers,
-		KTModals,
 		KTCustomize,
 	},
 	setup() {

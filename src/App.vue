@@ -1,47 +1,38 @@
 <template>
-  <RouterView />
+	<RouterView />
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, onBeforeMount, onMounted } from "vue";
-import { RouterView } from "vue-router";
+import { initializeComponents } from "@/core/plugins/keenthemes";
+import { themeConfigValue } from "@/layouts/default-layout/config/helper";
+import { useBodyStore } from "@/stores/body";
 import { useConfigStore } from "@/stores/config";
 import { useThemeStore } from "@/stores/theme";
-import { useBodyStore } from "@/stores/body";
-import { themeConfigValue } from "@/layouts/default-layout/config/helper";
-import { initializeComponents } from "@/core/plugins/keenthemes";
+import { defineComponent, nextTick, onBeforeMount, onMounted } from "vue";
+import { RouterView } from "vue-router";
 
 export default defineComponent({
-  name: "app",
-  components: {
-    RouterView,
-  },
-  setup() {
-    const configStore = useConfigStore();
-    const themeStore = useThemeStore();
-    const bodyStore = useBodyStore();
+	name: "app",
+	components: {
+		RouterView,
+	},
+	setup() {
+		const configStore = useConfigStore();
+		const themeStore = useThemeStore();
+		const bodyStore = useBodyStore();
 
-    onBeforeMount(() => {
-      /**
-       * Overrides the layout config using saved data from localStorage
-       * remove this to use static config (@/layouts/default-layout/config/DefaultLayoutConfig.ts)
-       */
-      configStore.overrideLayoutConfig();
+		onBeforeMount(() => {
+			configStore.overrideLayoutConfig();
+			themeStore.setThemeMode(themeConfigValue.value);
+		});
 
-      /**
-       *  Sets a mode from configuration
-       */
-      themeStore.setThemeMode(themeConfigValue.value);
-    });
-
-    onMounted(() => {
-      nextTick(() => {
-        initializeComponents();
-
-        bodyStore.removeBodyClassName("page-loading");
-      });
-    });
-  },
+		onMounted(() => {
+			nextTick(() => {
+				initializeComponents();
+				bodyStore.removeBodyClassName("page-loading");
+			});
+		});
+	},
 });
 </script>
 
@@ -69,6 +60,6 @@ export default defineComponent({
 @import "assets/sass/style";
 
 #app {
-  display: contents;
+	display: contents;
 }
 </style>
