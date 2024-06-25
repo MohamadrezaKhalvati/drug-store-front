@@ -2,13 +2,7 @@
 	<div id="Delete-Alert-Modal" ref="changeRoleModal" class="modal modal-sm fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered mw-400px ">
 			<div class="modal-content">
-
-
 				<el-form ref="formRef" @submit.prevent="submit()">
-
-
-
-
 					<div class="d-flex flex-column justify-content-center">
 						<div class="d-flex justify-content-center my-10">
 							<KTIcon icon-name="information-5" icon-class="text-danger  fs-5x" />
