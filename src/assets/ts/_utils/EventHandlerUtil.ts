@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { DataUtil } from './_DataUtil'
 import { getUniqueIdWithPrefix } from './_TypesHelpers'
 

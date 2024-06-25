@@ -7,22 +7,16 @@ class LayoutService {
   public static bodyStore: any
   public static configStore: any
 
-  /**
-   * @description initialize default layout
-   */
   public static init(): void {
     this.bodyStore = useBodyStore()
     this.configStore = useConfigStore()
 
-    //empty body element classes and attributes
     LayoutService.emptyElementClassesAndAttributes(document.body)
 
-    //setup layout
     LayoutService.initLayoutSettings()
     LayoutService.initToolbarSettings()
     LayoutService.initWidthSettings()
 
-    // init layout components
     LayoutService.initDefaultLayout()
     LayoutService.initToolbar()
     LayoutService.initSidebar()
@@ -31,7 +25,6 @@ class LayoutService {
     LayoutService.initFooter()
   }
 
-  // Init Layout settings
   public static initLayoutSettings(): void {
     const pageWidth = objectPath.get(config.value, 'general.pageWidth')
     const layout = objectPath.get(config.value, 'general.layout')

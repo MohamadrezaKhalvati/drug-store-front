@@ -10,23 +10,16 @@ export class ElementAnimateUtil {
     update: Function,
     complete?: Function,
   ) {
-    /**
-     * TinyAnimate.easings
-     *  Adapted from jQuery Easing
-     */
     const easings = {
       linear: function (t: number, b: number, c: number, d: number) {
         return (c * t) / d + b
       },
     }
 
-    // Create mock done() function if necessary
     if (!complete) {
       complete = function () {}
     }
 
-    // Animation loop
-    // let canceled = false;
     const change = to - from
 
     function loop(timestamp: number) {
@@ -47,7 +40,6 @@ export class ElementAnimateUtil {
 
     update(from)
 
-    // Start animation loop
     const start =
       window.performance && window.performance.now
         ? window.performance.now()
@@ -110,9 +102,9 @@ export class ElementAnimateUtil {
 
     ElementAnimateUtil.animate(from, to, duration, function (value: number) {
       document.documentElement.scrollTop = value
-      // document.body.parentNode.scrollTop = value;
+
       document.body.scrollTop = value
-    }) //, easing, done
+    })
   }
   public static scrollTop(offset: number, duration: number) {
     ElementAnimateUtil.scrollTo(null, offset, duration)

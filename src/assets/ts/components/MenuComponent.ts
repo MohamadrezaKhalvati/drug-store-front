@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createPopper, type VirtualElement } from '@popperjs/core'
 import {
   DOMEventHandlerUtil,
