@@ -20,7 +20,7 @@
 				</div>
 				<div :class="`bg-${color}`" class="progress h-7px bg-opacity-50 mt-2">
 					<div :class="`bg-${color}`" class="progress-bar" role="progressbar" :style="`width: ${progress}`"
-						aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
 				</div>
 			</div>
 
@@ -29,11 +29,12 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent } from "vue";
+import { getAssetPath } from '@/core/helpers/assets';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: "OrderThisMonth",
+	name: 'OrderThisMonth',
+	components: {},
 	props: {
 		widgetClasses: String,
 		color: String,
@@ -41,11 +42,10 @@ export default defineComponent({
 		progress: String,
 		title: String,
 	},
-	components: {},
 	setup() {
 		return {
 			getAssetPath,
-		};
+		}
 	},
-});
+})
 </script>

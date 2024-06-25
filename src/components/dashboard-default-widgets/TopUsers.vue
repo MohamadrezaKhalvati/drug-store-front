@@ -15,7 +15,7 @@
 					</div>
 					<div class="symbol symbol-50px me-5">
 
-						<img :src="item.avatar" class="" alt="" />
+						<img :src="item.avatar" class="" alt="">
 					</div>
 
 					<div class="flex-grow-1">
@@ -34,12 +34,12 @@
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
-import { defineComponent, ref } from "vue";
-import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
+import { getAssetPath } from '@/core/helpers/assets';
+import { defineComponent, ref } from 'vue';
+import Dropdown2 from '../dropdown/Dropdown2.vue';
 
 export default defineComponent({
-	name: "TopUsers",
+	name: 'TopUsers',
 	components: {
 		Dropdown2,
 	},
@@ -49,41 +49,41 @@ export default defineComponent({
 	setup() {
 		const list = ref([
 			{
-				avatar: getAssetPath("media/avatars/300-6.jpg"),
-				name: "Arthur Morgan",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-6.jpg'),
+				name: 'Arthur Morgan',
+				description: 'smith@kpmg.com',
 			},
 			{
-				avatar: getAssetPath("media/avatars/300-5.jpg"),
-				name: "Arthur Morgan ",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-5.jpg'),
+				name: 'Arthur Morgan ',
+				description: 'smith@kpmg.com',
 			},
 			{
-				avatar: getAssetPath("media/avatars/300-11.jpg"),
-				name: "Arthur Morgan ",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-11.jpg'),
+				name: 'Arthur Morgan ',
+				description: 'smith@kpmg.com',
 			},
 			{
-				avatar: getAssetPath("media/avatars/300-9.jpg"),
-				name: "Arthur Morgan ",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-9.jpg'),
+				name: 'Arthur Morgan ',
+				description: 'smith@kpmg.com',
 			},
 			{
-				avatar: getAssetPath("media/avatars/300-23.jpg"),
-				name: "Arthur Morgan ",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-23.jpg'),
+				name: 'Arthur Morgan ',
+				description: 'smith@kpmg.com',
 			},
 			{
-				avatar: getAssetPath("media/avatars/300-23.jpg"),
-				name: "Arthur Morgan ",
-				description: "smith@kpmg.com",
+				avatar: getAssetPath('media/avatars/300-23.jpg'),
+				name: 'Arthur Morgan ',
+				description: 'smith@kpmg.com',
 			},
-		]);
+		])
 
 		return {
 			list,
 			getAssetPath,
-		};
+		}
 	},
-});
+})
 </script>

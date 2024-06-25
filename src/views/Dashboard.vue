@@ -28,14 +28,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Registrationstatistics from '@/components/dashboard-default-widgets/Registrationstatistics.vue'
+import AverageDailySales from '@/components/dashboard-default-widgets/AverageDailySales.vue'
 import IncomeStasictics from '@/components/dashboard-default-widgets/IncomeStasictics.vue'
+import OrderThisMonth from '@/components/dashboard-default-widgets/OrderThisMonth.vue'
 import ProductOrders from '@/components/dashboard-default-widgets/ProductOrders.vue'
-import SalesThisMonth from '@/components/widgets/charts/SalesThisMonth.vue'
-import AverageDailySales from '@/components/widgets/charts/AverageDailySales.vue'
-import TopUsers from '@/components/widgets/lists/TopUsers.vue'
-import OrderThisMonth from '@/components/widgets/statsistics/OrderThisMonth.vue'
+import Registrationstatistics from '@/components/dashboard-default-widgets/Registrationstatistics.vue'
+import SalesThisMonth from '@/components/dashboard-default-widgets/SalesThisMonth.vue'
+import { defineComponent } from 'vue'
+import TopUsers from '../components/dashboard-default-widgets/TopUsers.vue'
+
 export default defineComponent({
 	name: 'MainDashboard',
 	components: {
