@@ -6,5 +6,5 @@ import InlineSvg from 'vue-inline-svg'
  * @param app vue instance
  */
 export function initInlineSvg(app: App<Element>) {
-  app.component('inline-svg', InlineSvg)
+  app.component('InlineSvg', InlineSvg)
 }

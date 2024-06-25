@@ -79,7 +79,6 @@ export default defineComponent({
 		return {
 			getAssetPath,
 			deleteProfile,
-
 		}
 	}
 
