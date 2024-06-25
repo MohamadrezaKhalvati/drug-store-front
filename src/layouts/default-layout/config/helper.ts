@@ -25,9 +25,9 @@ export const themeMode = computed(() => {
 export const themeConfigValue = computed(() => {
   return useConfigStore().getLayoutConfig('general.mode')
     ? (useConfigStore().getLayoutConfig('general.mode') as
-        | 'system'
+        | 'light'
         | 'dark'
-        | 'light')
+        | 'system')
     : 'system'
 })
 

@@ -58,7 +58,7 @@ class StickyComponent {
   }
 
   private scroll = () => {
-    console.log('trigger scoll')
+  
     const offset = this.getOption('offset')
     const reverse = this.getOption('reverse')
 

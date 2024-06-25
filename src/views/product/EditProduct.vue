@@ -486,9 +486,7 @@ export default defineComponent({
 
 		})
 
-		watch(() => formData.value.productName, () => {
-			console.log(formData.value.productName)
-		})
+
 
 		return {
 			formData,

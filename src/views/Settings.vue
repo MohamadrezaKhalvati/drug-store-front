@@ -136,7 +136,7 @@ export default defineComponent({
 	setup() {
 
 		function deleteProfile() {
-			console.log('want to delete profile')
+
 		}
 
 		const theme = ref('Light')

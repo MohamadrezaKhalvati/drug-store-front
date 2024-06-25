@@ -62,7 +62,7 @@
 <script lang="ts">
 import ProfileDetail from '@/components/profileDetail/ProfileDetail.vue';
 import { getAssetPath } from '@/core/helpers/assets';
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'StaffProfile',
@@ -70,12 +70,8 @@ export default defineComponent({
 	setup() {
 
 		function deleteProfile() {
-			console.log('want to delete profile')
 		}
 
-		onMounted(() => {
-			console.log('sdf')
-		})
 		return {
 			getAssetPath,
 			deleteProfile,
