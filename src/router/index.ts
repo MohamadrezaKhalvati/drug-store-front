@@ -134,15 +134,7 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ['Orders', 'Order Details'],
         },
       },
-      {
-        path: '/Report',
-        name: 'Report',
-        component: () => import('@/views/Report.vue'),
-        meta: {
-          pageTitle: 'Report',
-          breadcrumbs: ['Report'],
-        },
-      },
+
       {
         path: '/Setting',
         name: 'Setting',

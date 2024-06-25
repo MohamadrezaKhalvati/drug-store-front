@@ -4,7 +4,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import ProductList from '@/components/productList/ProductList.vue';
 import { defineComponent } from 'vue';
 

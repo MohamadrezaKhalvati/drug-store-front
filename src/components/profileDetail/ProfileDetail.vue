@@ -274,7 +274,7 @@
 	<ChangeRoleModal />
 </template>
 
-<script>
+<script lang="ts">
 import ChangeEmail from '@/components/modals/forms/ChangeEmail.vue'
 import ChangeRoleModal from '@/components/modals/forms/ChangeRole.vue'
 import { defineComponent, ref } from 'vue'

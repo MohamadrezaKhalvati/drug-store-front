@@ -4,9 +4,9 @@
 	</div>
 </template>
 
-<script>
-import CustomerList from '@/components/customerList/CustomerList.vue'
-import { defineComponent } from 'vue'
+<script lang="ts">
+import CustomerList from '@/components/customerList/CustomerList.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'Customer',
